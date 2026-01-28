@@ -1,12 +1,14 @@
 <div align="center">
-# 👨‍💻 Riyan Samuel Harahap — Portfolio Website
+👨‍💻 Riyan Samuel Harahap — Portfolio Website
 
 Personal portfolio website built to showcase my profile, experience, skills, and projects as a **Sistem Informasi student** with interests in **web development, UI implementation, and organizational leadership**.
-</div>
+
 
 🔗 **Live Demo:**  
-👉 https://okeanos404.github.io/portfolio-website  
+👉 https://okeanos404.github.io/My-Portofolio/  
 *(sesuaikan jika repo / link berbeda)*
+
+</div>
 
 ---
 
@@ -117,4 +119,6 @@ I value discipline, teamwork, adaptability, and continuous learning.
 
 Feedback is always welcome 🙌
 
-## © 2026 — Riyan Samuel Harahap
+<div align="center">
+© 2026 — Riyan Samuel Harahap
+</div>

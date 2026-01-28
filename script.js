@@ -16,6 +16,22 @@ backToTop.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
+// Hamburger Menu
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
+
+// Tutup menu saat klik link
+document.querySelectorAll("#navMenu a").forEach(link => {
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("active");
+  });
+});
+
+
 // Smooth highlight navbar active
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("header nav ul li a");

@@ -77,6 +77,23 @@ header ul li a:hover {
   transform: translateY(-1px);
 }
 
+/* === HAMBURGER === */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+  transition: 0.3s ease;
+}
+
+
 /* Hero/About Section */
 section.about-section {
   min-height: 100vh;
@@ -448,6 +465,50 @@ footer {
 
 /* Responsive */
 @media (max-width: 980px) {
+
+  /* HAMBURGER ON */
+  .hamburger {
+    display: flex;
+  }
+
+  /* NAV MENU */
+  nav {
+    position: absolute;
+    top: 70px;
+    right: 18px;
+    width: 200px;
+
+    background: rgba(10,10,10,.95);
+    border: 1px solid rgba(255,45,45,.35);
+    border-radius: 14px;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: 0.3s ease;
+  }
+
+  nav.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+  }
+
+  nav ul li a:last-child {
+    border-bottom: none;
+  }
+
   section.about-section {
     flex-direction: column;
     text-align: center;
