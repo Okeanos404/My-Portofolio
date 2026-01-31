@@ -44,7 +44,6 @@ No framework, no library — built with **pure fundamentals**.
 ## 📂 Project Structure
 
 ```text
-
 ├── 📁 assets
 │   ├── 📄 favicon.ico
 │   └── 🖼️ foto-riyan.jpg
