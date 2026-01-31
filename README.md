@@ -44,13 +44,15 @@ No framework, no library — built with **pure fundamentals**.
 ## 📂 Project Structure
 
 ```text
-.
-├── index.html        # Main page
-├── style.css         # Styling & layout
-├── script.js         # Interactivity (navbar, scroll, etc.)
-├── foto-riyan.jpg    # Profile image
-├── CV-Riyan-Samuel-Harahap.pdf
-└── favicon.ico
+
+├── 📁 assets
+│   ├── 📄 favicon.ico
+│   └── 🖼️ foto-riyan.jpg
+├── 📕 CV-Riyan-Samuel-Harahap.pdf
+├── 📝 README.md
+├── 🌐 index.html
+├── 📄 script.js
+└── 🎨 style.css
 ```
 ## 🚀 Features
 
