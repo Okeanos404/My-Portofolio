@@ -73,10 +73,10 @@ No framework, no library — built with **pure fundamentals**.
 
 ### Some projects featured on this portfolio:
 
-- Web - Classic Motors
+- Classic Motors Web
 Static website for showcasing classic motorcycles
 
-- Web - Mini SIAKAD
+- Mini SIAKAD Web
 Simple academic system interface design
 
 - Photobooth Web App
