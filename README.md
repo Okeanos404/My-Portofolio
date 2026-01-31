@@ -74,11 +74,11 @@ No framework, no library — built with **pure fundamentals**.
 
 ### Some projects featured on this portfolio:
 
-- UI Clone — Shopee
-HTML & CSS layout practice for e-commerce UI
+- Web - Classic Motors
+Static website for showcasing classic motorcycles
 
-- UI Clone — Facebook
-Basic page structure & component implementation
+- Web - Mini SIAKAD
+Simple academic system interface design
 
 - Photobooth Web App
 Web-based camera capture & image download
