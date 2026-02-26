@@ -463,6 +463,18 @@ footer {
   transform: translateY(-2px);
 }
 
+/* Canvas latar belakang bintang */
+#starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;          /* di belakang semua konten */
+  pointer-events: none; /* biar klik tetap ke konten */
+  display: block;
+}
+
 /* Responsive */
 @media (max-width: 980px) {
 
@@ -537,3 +549,4 @@ footer {
     gap: 14px;
   }
 }
+
