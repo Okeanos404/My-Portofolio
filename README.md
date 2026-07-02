@@ -3,12 +3,23 @@
 
 Personal portfolio website built to showcase my profile, experience, skills, and projects as a **Sistem Informasi student** with interests in **web development, UI implementation, and organizational leadership**.
 
-
 🔗 **Live Demo:**  
 👉 https://okeanos404.github.io/My-Portofolio/  
-*(sesuaikan jika repo / link berbeda)*
 
 </div>
+
+---
+
+## 🧽 Bikini Bottom & Antigravity Theme (UI Overhaul)
+Recently, this portfolio underwent a massive visual overhaul, transforming into a vibrant, dynamic underwater experience inspired by **SpongeBob SquarePants (Bikini Bottom)**!
+
+✨ **New Features Include:**
+- **Time Card Splash Screen:** A classic SpongeBob pastel floral loading screen that transitions beautifully when clicked.
+- **Custom Bubble Cursor:** An interactive, animated SVG bubble cursor that "squishes" when hovering over interactive elements.
+- **Antigravity Animations:** Floating and bobbing animations on images, icons, and cards to simulate a living underwater environment.
+- **Character-Themed Colors:** Utilizing the iconic palettes of Bikini Bottom citizens (SpongeBob Yellow, Mr. Krabs Red, Squidward Teal, Patrick Pink) across UI components.
+- **Infinite Gallery Slider:** A smooth, auto-scrolling marquee slider showcasing organizational documentation and activities.
+- **Chum Bucket Contact Section:** A metallic/rusty bucket-colored contact block holding the colorful character buttons.
 
 ---
 
@@ -19,7 +30,7 @@ This portfolio website serves as my personal branding platform, containing:
 - Professional profile & introduction  
 - Organizational and internship experience  
 - List of technical & soft skills  
-- Selected web projects  
+- Selected web projects (Infinite Gallery & Project Cards)
 - Contact & social media links  
 
 The main goal of this project is to present myself not only as a **coder**, but also as a **team leader and adaptable learner**.
@@ -28,11 +39,11 @@ The main goal of this project is to present myself not only as a **coder**, but 
 
 ## 🛠️ Tech Stack
 
-- **HTML5** — semantic structure  
-- **CSS3** — custom styling & responsive layout  
-- **JavaScript (Vanilla)** — interactive behavior  
-- **Font Awesome** — icons  
-- **Google Fonts (Poppins)**  
+- **HTML5** — Semantic structure  
+- **CSS3** — Custom styling, animations, and the entire Bikini Bottom theme  
+- **JavaScript (Vanilla)** — Interactive behavior, Splash screen logic, dynamic bubble cursor, and typed text effect.  
+- **Font Awesome** — Icons  
+- **Google Fonts (Poppins, Fredoka, Cherry Bomb One)**  
 
 No framework, no library — built with **pure fundamentals**.
 
@@ -45,77 +56,108 @@ No framework, no library — built with **pure fundamentals**.
 
 ```text
 ├── 📁 assets
-│   ├── 📄 favicon.ico
-│   └── 🖼️ foto-riyan.jpg
-├── 📕 CV-Riyan-Samuel-Harahap.pdf
+│   ├── 📁 design
+│   │   └── 🖼️ BajuDesain.png
+│   ├── 📁 images
+│   │   ├── 📁 certification
+│   │   │   ├── 🖼️ Sertifikat_pkl_1.png
+│   │   │   ├── 🖼️ Sertifikat_pkl_2.png
+│   │   │   └── 🖼️ Sertifikat_pkl_3.png
+│   │   ├── 📁 gallery
+│   │   │   ├── 🖼️ galeri_1.png
+│   │   │   ├── 🖼️ galeri_2.png
+│   │   │   ├── 🖼️ galeri_3.png
+│   │   │   ├── 🖼️ galeri_4.png
+│   │   │   ├── 🖼️ galeri_5.png
+│   │   │   ├── 🖼️ galeri_6.png
+│   │   │   └── 🖼️ galeri_7.png
+│   │   ├── 📁 web photo
+│   │   │   ├── 🖼️ Eco_1.png
+│   │   │   ├── 🖼️ Eco_2.png
+│   │   │   ├── 🖼️ Eco_3.png
+│   │   │   ├── 🖼️ Eco_4.png
+│   │   │   ├── 🖼️ Motor_1.png
+│   │   │   ├── 🖼️ Motor_2.png
+│   │   │   ├── 🖼️ Motor_3.png
+│   │   │   ├── 🖼️ Motor_4.png
+│   │   │   ├── 🖼️ Photo_1.png
+│   │   │   ├── 🖼️ Photo_2.png
+│   │   │   ├── 🖼️ Photo_3.png
+│   │   │   ├── 🖼️ Photo_4.png
+│   │   │   ├── 🖼️ Siakad_1.png
+│   │   │   ├── 🖼️ Siakad_2.png
+│   │   │   ├── 🖼️ Siakad_3.png
+│   │   │   └── 🖼️ Siakad_4.png
+│   │   └── 🖼️ foto-riyan.png
+│   ├── 📕 CV-Riyan-Samuel-Harahap.pdf
+│   └── 📄 favicon.ico
+├── 📁 css
+│   └── 🎨 style.css
+├── 📁 js
+│   └── 📄 script.js
 ├── 📝 README.md
-├── 🌐 index.html
-├── 📄 script.js
-└── 🎨 style.css
+└── 🌐 index.html
 ```
+
 ## 🚀 Features
 
-- Responsive layout (desktop & mobile friendly)
+- **Responsive Layout** (desktop & mobile friendly)
+- **Time Card Splash Screen**
+- **Custom SVG Animated Cursor**
+- **Smooth Scrolling Navigation** with Hover Effects
+- **Active Navbar Highlight** on scroll
+- **Infinite Auto-Scrolling Marquee Gallery**
+- **Back-to-top Button** with circular SVG scroll progress
+- **Downloadable CV**
+- **Thematic UI** with cartoon borders, vibrant colors, and floating "Antigravity" effects
 
-- Smooth scrolling navigation
-
-- Active navbar highlight on scroll
-
-- Back-to-top button
-
-- Downloadable CV
-
-- Clean UI with dark-red theme
-
-- External project links
+---
 
 ## 📌 Highlighted Projects
 
 ### Some projects featured on this portfolio:
 
-- Classic Motors Web
-Static website for showcasing classic motorcycles
+- **Classic Motors Web**  
+  Static website for showcasing classic motorcycles
 
-- Mini SIAKAD Web
-Simple academic system interface design
+- **Mini SIAKAD Web**  
+  Simple academic system interface design
 
-- Photobooth Web App
-Web-based camera capture & image download
+- **Photobooth Web App**  
+  Web-based camera capture & image download
 
-- EcoPedia Web
-Informational website about waste & environment
+- **EcoPedia Web**  
+  Informational website about waste & environment
 
-## 🔥 Note:
-These projects focus on UI implementation and logic practice, not just visual cloning.
+🔥 **Note:** These projects focus on UI implementation and logic practice, not just visual cloning.
+
+---
 
 ## 👤 About Me
 
-- 🎓 Sistem Informasi student
-
-- 🏛 Ketua Himpunan Mahasiswa Sistem Informasi (HIMASI)
-
-- 💼 Experience in internship & team-based projects
-
-- 🧠 Interested in web development, system analysis, and UI implementation
+- 🎓 **Sistem Informasi student**
+- 🏛 **Ketua Himpunan Mahasiswa Sistem Informasi (HIMASI)**
+- 💼 **Experience** in internship & team-based projects
+- 🧠 **Interested in** web development, system analysis, and UI implementation
 
 I value discipline, teamwork, adaptability, and continuous learning.
+
+---
 
 ## 📬 Contact
 
 - 📧 Email: riyansamuel6@gmail.com
-
 - 💻 GitHub: https://github.com/Okeanos404
-
 - 📸 Instagram: @riyaannnns_
+- 💬 WhatsApp: +62 812-8698-3212
+
+---
 
 ## 📝 Notes for Recruiters / Reviewers
 
-## This portfolio is actively maintained and will continue to evolve as I:
-
+This portfolio is actively maintained and will continue to evolve as I:
 - Add backend-based projects (PHP / Laravel)
-
 - Improve system design & database integration
-
 - Explore real-world case studies
 
 Feedback is always welcome 🙌

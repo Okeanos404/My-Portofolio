@@ -1,18 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
-/* Theme Variables: Red - Black */
+/* Theme Variables: SpongeBob / Bikini Bottom */
 :root {
-  --primary: #FF1B6B;
-  --primary-hover: #E0125C;
+  --primary: #FCE300; /* SpongeBob Yellow */
+  --primary-hover: #D4BE00;
+  
+  --accent-pink: #FF7396; /* Patrick Pink */
+  --accent-red: #D83833; /* Mr Krabs Red */
+  --accent-teal: #6DBBB7; /* Squidward Teal */
+  --accent-green: #28C76F; /* Plankton Green */
 
-  --dark-primary: #070707;
-  --dark-secondary: #101010;
+  --dark-primary: #1CB5E0;
+  --dark-secondary: #000046;
 
-  --text-color: #cfcfcf;
+  --text-color: #f0f0f0;
   --white: #ffffff;
+  --black: #000000;
 
-  --glass: rgba(255, 255, 255, 0.06);
-  --border: rgba(255, 255, 255, 0.12);
+  --glass: rgba(255, 255, 255, 0.15);
+  --border: #000; /* Thick black borders for cartoon feel */
 }
 
 * {
@@ -25,11 +31,11 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: "Poppins", sans-serif;
-  background: radial-gradient(900px 600px at 15% 10%, rgba(255,27,107,.20), transparent 60%),
-              radial-gradient(900px 650px at 85% 20%, rgba(69,202,255,.14), transparent 55%),
-              linear-gradient(180deg, #050505, #090909);
+  background: linear-gradient(180deg, #1CB5E0 0%, #000046 100%);
+  background-attachment: fixed;
   color: var(--white);
-  cursor: none; /* untuk custom cursor */
+  /* Custom bubble cursor */
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="white" stroke-width="2"/><circle cx="8" cy="8" r="2" fill="white"/></svg>') 12 12, auto;
 }
 
 /* Header */
@@ -74,9 +80,14 @@ header ul li a {
 }
 
 header ul li a:hover {
-  color: var(--primary);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
+
+/* Character colors on hover for nav links */
+header ul li:nth-child(1) a:hover { color: var(--primary); -webkit-text-stroke: 1px #000; text-shadow: 2px 2px 0 rgba(0,0,0,0.5); } /* About - SpongeBob */
+header ul li:nth-child(2) a:hover { color: var(--accent-pink); -webkit-text-stroke: 1px #000; text-shadow: 2px 2px 0 rgba(0,0,0,0.5); } /* Experience - Patrick */
+header ul li:nth-child(3) a:hover { color: var(--accent-teal); -webkit-text-stroke: 1px #000; text-shadow: 2px 2px 0 rgba(0,0,0,0.5); } /* Projects - Squidward */
+header ul li:nth-child(4) a:hover { color: var(--accent-red); -webkit-text-stroke: 1px #000; text-shadow: 2px 2px 0 rgba(0,0,0,0.5); } /* Contact - Mr Krabs */
 
 /* === HAMBURGER === */
 .hamburger {
@@ -105,6 +116,11 @@ section.about-section {
   gap: 70px;
 
   background: radial-gradient(850px 500px at 70% 20%, rgba(69,202,255,.10), transparent 60%);
+}
+
+.about-img {
+  align-self: flex-start;
+  margin-top: 40px;
 }
 
 .about-img img {
@@ -169,21 +185,29 @@ section.about-section {
 
 .social-icons li {
   border-radius: 999px;
-  border: 1px solid rgba(255,27,107,.65);
-  background: rgba(255,255,255,.03);
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.5);
   padding: 8px 12px;
   transition: 0.25s ease;
 }
 
+.social-icons li:nth-child(1) { background-color: var(--accent-pink); } /* LinkedIn */
+.social-icons li:nth-child(2) { background-color: var(--accent-red); }  /* Instagram */
+.social-icons li:nth-child(3) { background-color: var(--accent-teal); } /* GitHub */
+.social-icons li:nth-child(4) { background-color: var(--primary); }     /* Email */
+
 .social-icons li:hover {
-  background-color: rgba(255,27,107,.16);
+  filter: brightness(1.2);
   transform: translateY(-2px);
 }
 
 .social-icons li a {
   text-decoration: none;
-  color: var(--white);
+  color: #000;
   font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Buttons */
@@ -210,35 +234,41 @@ section.about-section {
 }
 
 .btn.btn-primary {
-  background: linear-gradient(90deg, #FF1B6B, #45CAFF);
+  background: var(--accent-red);
   color: #fff;
-  box-shadow: 0 18px 40px rgba(255,27,107,.18);
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.5);
 }
 
 .btn.btn-primary:hover {
-  background: linear-gradient(90deg, #E0125C, #2EACDF);
+  background: #ff524e; /* Lighter red for hover */
   transform: translateY(-2px);
+  box-shadow: 6px 6px 0 rgba(0,0,0,0.5);
 }
 
 .btn-dark-outlined {
-  background: rgba(255,255,255,.03);
-  border: 1px solid rgba(255,27,107,.55);
-  color: rgba(255,255,255,.90);
+  background: rgba(255,255,255,.1);
+  border: 3px solid #000;
+  color: #fff;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.5);
 }
 
 .btn-dark-outlined:hover {
-  background-color: rgba(255,27,107,.15);
-  border-color: rgba(255,27,107,.9);
+  background-color: var(--accent-teal);
+  color: #000;
   transform: translateY(-2px);
+  box-shadow: 6px 6px 0 rgba(0,0,0,0.5);
 }
 
 /* Skills List */
 .skills-section {
   margin-top: 30px;
-  padding: 18px;
-  border-radius: 14px;
-  background: rgba(255,255,255,.03);
-  border: 1px solid rgba(255,255,255,.10);
+  padding: 24px;
+  border-radius: 15px;
+  background: rgba(255,255,255,.15);
+  border: 3px solid var(--border);
+  backdrop-filter: blur(5px);
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
 }
 
 .skills-section h3 {
@@ -260,15 +290,27 @@ section.about-section {
 }
 
 .skills-list li {
-  color: var(--text-color);
+  color: #fff;
   font-size: 14px;
+  font-weight: 500;
   display: flex;
   align-items: center;
   gap: 10px;
+  background: rgba(255,255,255,0.15);
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skills-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.5);
 }
 
 .skills-list li i {
-  color: var(--primary);
+  color: var(--primary); /* SpongeBob Yellow for visibility */
 }
 
 /* Experience Section */
@@ -482,10 +524,14 @@ section.gallery-section {
 .marquee-content {
   display: flex;
   gap: 20px;
-  animation: scrollMarquee 20s linear infinite;
-  padding-right: 20px; /* space after the last item to match the gap */
-  width: max-content;
-  flex-shrink: 0;
+  animation: scrollMarquee 30s linear infinite;
+  padding-right: 20px;
+  min-width: max-content;
+  flex: 0 0 auto;
+}
+
+.marquee-item {
+  flex: 0 0 auto;
 }
 
 .marquee-item img {
@@ -795,7 +841,11 @@ footer {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: #050505;
+  /* SpongeBob floral/pastel background simulation */
+  background-color: #79DDF0;
+  background-image: radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.4) 10%, transparent 11%),
+                    radial-gradient(circle at 80% 60%, rgba(255, 255, 255, 0.4) 15%, transparent 16%),
+                    radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.4) 8%, transparent 9%);
   z-index: 9999;
   display: flex;
   flex-direction: column;
@@ -821,12 +871,12 @@ footer {
 
 .welcome-text {
   font-family: 'Fredoka One', cursive;
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 700;
-  background: linear-gradient(90deg, #FF1B6B, #45CAFF);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--primary);
+  -webkit-text-stroke: 3px #000;
+  -webkit-text-fill-color: var(--primary);
+  text-shadow: 6px 6px 0px #000;
   transform: translateY(100%);
   opacity: 0;
   animation: revealText 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
@@ -836,19 +886,25 @@ footer {
 
 .icon-float-left, .icon-float-right {
   display: inline-block;
-  color: var(--primary);
+  -webkit-text-stroke: 2px #000;
   animation: floatIcon 3s ease-in-out infinite;
   margin: 0 15px;
 }
 
+.icon-float-left {
+  color: var(--accent-teal); /* Squidward */
+}
+
 .icon-float-right {
+  color: var(--accent-red); /* Mr. Krabs */
   animation-delay: 1.5s;
 }
 
 .click-hint {
-  font-family: 'Inter', sans-serif;
-  color: rgba(255,255,255,0.7);
-  font-size: 1rem;
+  font-family: 'Fredoka One', cursive;
+  color: #fff;
+  -webkit-text-stroke: 1px #000;
+  font-size: 1.2rem;
   margin-top: 40px;
   animation: pulseHint 1.5s infinite;
   opacity: 0;
@@ -1103,5 +1159,137 @@ footer {
   .skeleton-about { flex-direction: column; align-items: center; }
   .skeleton-about::before { width: 150px; height: 150px; }
   .skeleton-about::after { height: 150px; }
-  .skeleton-exp, .skeleton-projects { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   BIKINI BOTTOM & ANTIGRAVITY THEME CSS OVERRIDES
+   ========================================================= */
+
+/* Sand Footer & Chum Bucket Contact */
+footer {
+  background: linear-gradient(180deg, #D2B48C 0%, #C2A278 100%) !important;
+  color: #000 !important;
+  border-top: 3px solid #000;
+}
+footer p {
+  color: #000 !important;
+}
+
+section#contact {
+  /* Chum Bucket Iron Bucket color */
+  background: linear-gradient(180deg, #78909C 0%, #455A64 100%) !important;
+  color: #fff !important;
+  border-top: 3px solid #000;
+  padding: 80px 20px 80px 20px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+section#contact h2, section#contact p, section#contact .contact-note {
+  color: #fff !important;
+}
+
+/* Contact Character Buttons */
+.contact-buttons a {
+  border: 3px solid #000 !important;
+  color: #000 !important;
+  font-weight: 800 !important;
+}
+
+.contact-buttons a:nth-child(1) { background-color: var(--primary) !important; } /* SpongeBob */
+.contact-buttons a:nth-child(2) { background-color: var(--accent-red) !important; color: #fff !important; } /* Mr Krabs */
+.contact-buttons a:nth-child(3) { background-color: var(--accent-teal) !important; } /* Squidward */
+.contact-buttons a:nth-child(4) { background-color: var(--accent-pink) !important; } /* Patrick */
+
+.contact-buttons a:hover {
+  filter: brightness(0.85);
+  transform: translateY(-4px) !important;
+}
+
+/* UI Overrides: Cartoon Borders & Colors */
+.hero-buttons a, .projects-card-box, .exp-card, .cert-item img, .marquee-item img {
+  border: 3px solid var(--border) !important;
+  border-radius: 15px !important;
+}
+
+.hero-buttons a {
+  background-color: var(--accent-red) !important;
+  color: #fff !important;
+  font-weight: 800 !important;
+}
+
+.projects-card-box, .exp-card {
+  background: rgba(255,255,255, 0.1) !important;
+  backdrop-filter: blur(5px);
+}
+
+.exp-card__icons i {
+  color: var(--accent-teal) !important;
+}
+
+/* Antigravity Animation */
+.antigravity {
+  animation: antigravity 4s ease-in-out infinite;
+}
+
+/* Stagger the animations so they float organically */
+.exp-card:nth-child(even), .projects-card-box:nth-child(even), .marquee-item:nth-child(even) img {
+  animation-duration: 5s;
+  animation-delay: 0.5s;
+}
+.exp-card:nth-child(odd), .projects-card-box:nth-child(odd), .marquee-item:nth-child(odd) img {
+  animation-duration: 4.5s;
+  animation-delay: 1.2s;
+}
+.about-img img.antigravity {
+  animation-duration: 6s;
+}
+
+@keyframes antigravity {
+  0% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-12px) rotate(2deg); }
+  66% { transform: translateY(8px) rotate(-1.5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Squish/Hover Effect - Changed to filter to prevent jitter */
+.projects-card-box:hover, .exp-card:hover, .hero-buttons a:hover, .marquee-item img:hover {
+  filter: brightness(0.85) !important;
+  animation-play-state: paused !important; /* Pause antigravity when hovered */
+}
+
+/* Bubbles Background */
+.bubbles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -50px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  animation: floatBubble 10s infinite ease-in;
+}
+
+@keyframes floatBubble {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.5);
+    opacity: 0;
+  }
 }

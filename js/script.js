@@ -34,8 +34,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  generateBubbles();
   initCoverflow();
 });
+
+// ==================== BUBBLES GENERATOR ====================
+function generateBubbles() {
+  const container = document.querySelector('.bubbles-container');
+  if (!container) return;
+
+  const bubbleCount = 20; // Number of bubbles
+  for (let i = 0; i < bubbleCount; i++) {
+    const bubble = document.createElement('div');
+    bubble.classList.add('bubble');
+    
+    // Randomize size, position, and delay
+    const size = Math.random() * 30 + 10; // 10px to 40px
+    const left = Math.random() * 100; // 0% to 100%
+    const delay = Math.random() * 10; // 0s to 10s
+    const duration = Math.random() * 5 + 8; // 8s to 13s
+
+    bubble.style.width = `${size}px`;
+    bubble.style.height = `${size}px`;
+    bubble.style.left = `${left}%`;
+    bubble.style.animationDelay = `${delay}s`;
+    bubble.style.animationDuration = `${duration}s`;
+    
+    container.appendChild(bubble);
+  }
+}
 
 // ==================== DATA ====================
 const skillsData = [
@@ -146,7 +173,7 @@ function renderExperience() {
   const container = document.getElementById('experience-cards');
   if (!container) return;
   container.innerHTML = experienceData.map(exp => `
-    <div class="exp-card fade-up">
+    <div class="exp-card fade-up antigravity">
       <div class="exp-card__icons">
         <i class="fa-solid ${exp.icon}"></i>
       </div>
@@ -165,7 +192,7 @@ function renderProjects() {
   const container = document.getElementById('projects-cards');
   if (!container) return;
   container.innerHTML = projectsData.map((proj, index) => `
-    <div class="projects-card-box fade-up" data-project='${JSON.stringify(proj).replace(/'/g, "&apos;")}'>
+    <div class="projects-card-box fade-up antigravity" data-project='${JSON.stringify(proj).replace(/'/g, "&apos;")}'>
       <div class="project-collage">
         ${proj.images.map(img => `<img src="${img}" alt="${proj.title}" loading="lazy">`).join('')}
       </div>
