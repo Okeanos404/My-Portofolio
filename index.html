@@ -10,62 +10,87 @@
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/a9cdbedf57.js" crossorigin="anonymous"></script>
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
-  <body>
+  <!-- SPLASH SCREEN -->
+  <div class="preloader">
+    <div class="welcome-text-container">
+      <h1 class="welcome-text">
+        <i class="fa-solid fa-wand-magic-sparkles icon-float-left"></i>
+        Welcome to my Portofolio
+        <i class="fa-solid fa-rocket icon-float-right"></i>
+      </h1>
+      <p class="click-hint"><i class="fa-solid fa-hand-pointer"></i> Klik dimana saja untuk masuk</p>
+    </div>
+  </div>
+
+  <!-- SKELETON SCREEN -->
+  <div class="skeleton-screen">
+    <div class="skeleton-container">
+      <div class="skeleton-header"></div>
+      <div class="skeleton-about"></div>
+      <div class="skeleton-stats"></div>
+      <div class="skeleton-exp"></div>
+      <div class="skeleton-projects"></div>
+      <div class="skeleton-carousel"></div>
+    </div>
+  </div>
+
   <canvas id="starfield"></canvas>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
 
   <!-- Header -->
   <header>
-  <div>
-    <a href="#about">
-      <span class="logo">Portfolio</span>
-    </a>
-  </div>
+    <div>
+      <a href="#about">
+        <span class="logo">Portfolio</span>
+      </a>
+    </div>
 
-  <!-- Hamburger -->
-  <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+    <!-- Hamburger -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-  <nav id="navMenu">
-    <ul>
-      <li><a href="#about">Tentang</a></li>
-      <li><a href="#experience">Pengalaman</a></li>
-      <li><a href="#projects">Proyek</a></li>
-      <li><a href="#contact">Kontak</a></li>
-    </ul>
-  </nav>
-</header>
-
+    <nav id="navMenu">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#about" class="active">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+  </header>
 
   <!-- Main Content -->
   <main>
-
     <!-- About / Hero Section -->
     <section class="about-section" id="about">
       <div class="about-img">
-        <img src="assets/foto-riyan.jpg" alt="Foto Riyan Samuel Harahap" />
+        <img src="assets/images/foto-riyan.png" alt="Foto Riyan Samuel Harahap" />
       </div>
 
       <div class="about-content">
         <h4>Hai, Selamat Datang!</h4>
-        <h2>Saya <span>Riyan Samuel Harahap</span></h2>
+        <h2>Saya <span id="typed-text"></span></h2>
 
         <p>
-          Saya mahasiswa aktif semester 6 Program Studi Sistem Informasi Universitas Krisnadwipayana.
-          Saya memiliki pengalaman organisasi sebagai Ketua HIMASI dan terbiasa memimpin, berkomunikasi,
-          serta bekerja sama dalam tim. Saya disiplin, adaptif, dan siap berkembang melalui pengalaman
-          magang maupun kerja profesional.
+          Saya Riyan Samuel Harahap, mahasiswa aktif semester 6 Program Studi Sistem Informasi di Universitas Krisnadwipayana yang berfokus pada pengembangan web dan analisis data. Memiliki keahlian teknis dalam menggunakan PHP (Laravel), JavaScript, serta Python dan SQL untuk pengolahan data dasar. Berpengalaman memimpin Himpunan Mahasiswa Sistem Informasi (HIMASI) yang membentuk keterampilan manajemen proyek, komunikasi, dan pemecahan masalah. Siap berkontribusi dan berkembang sebagai Magang Data Analyst atau IT/Web Developer.
         </p>
 
-        <!-- Social Media Links -->
         <ul class="social-icons">
+          <li><a href="https://www.linkedin.com/in/riyan-samuel-harahap-7589393a4" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
           <li><a href="https://www.instagram.com/riyaannnns_?igsh=MTZodXo2aDRncTEzZA==" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
           <li><a href="https://github.com/Okeanos404" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a></li>
           <li><a href="mailto:riyansamuel6@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a></li>
@@ -76,168 +101,124 @@
           <a href="#contact" class="btn btn-primary" title="Hubungi saya">
             Hubungi Saya
           </a>
-
           <a href="assets/CV-Riyan-Samuel-Harahap.pdf" class="btn btn-dark-outlined" download>
             Download CV <i class="fa-solid fa-download"></i>
           </a>
         </div>
 
-        <!-- Skills List -->
+        <!-- Skills Section (akan diisi JS) -->
         <div class="skills-section">
           <h3>Keahlian</h3>
-          <ul class="skills-list">
-                    <li><i class="fa-solid fa-check"></i> Komunikasi</li>
-                    <li><i class="fa-solid fa-check"></i> Leadership & Koordinasi Tim</li>
+          <ul class="skills-list" id="skills-list"></ul>
+        </div>
+      </div>
+    </section>
 
-                    <li><i class="fa-solid fa-check"></i> Adaptif & Disiplin</li>
-                    <li><i class="fa-solid fa-check"></i> Teamwork</li>
-
-                    <li><i class="fa-solid fa-check"></i> HTML, CSS, JavaScript (Basic)</li>
-                    <li><i class="fa-solid fa-check"></i> PHP (Basic)</li>
-
-                    <li><i class="fa-solid fa-check"></i> CodeIgniter (Basic)</li>
-                    <li><i class="fa-solid fa-check"></i> Laravel (Basic)</li>
-
-                    <li><i class="fa-solid fa-check"></i> MySQL / MariaDB</li>
-                    <li><i class="fa-solid fa-check"></i> Laragon</li>
-
-                    <li><i class="fa-solid fa-check"></i> Canva</li>
-                    <li><i class="fa-solid fa-check"></i> CorelDraw (Basic)</li>
-
-                    <li><i class="fa-solid fa-check"></i> English (Basic)</li>
-                    </ul>
+    <!-- Stats Section (baru) -->
+    <section class="stats-section" id="stats">
+      <div class="stats-container">
+        <div class="stat-item">
+          <span class="stat-number" data-target="14">0</span>
+          <span class="stat-label">Proyek</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="3">0</span>
+          <span class="stat-label">Pengalaman</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="9">0</span>
+          <span class="stat-label">Keahlian</span>
         </div>
       </div>
     </section>
 
     <!-- Experience Section -->
     <section class="experience-section" id="experience">
-      <h2>Pengalaman <span>Saya</span></h2>
-
-      <div class="experience-cards">
-
-        <div class="exp-card">
-          <div class="exp-card__icons">
-            <i class="fa-solid fa-crown"></i>
-          </div>
-
-          <div class="exp-card__desc">
-            <h4>Ketua Himpunan — HIMASI</h4>
-            <p class="small-muted">2025 – 2026 (Sekarang)</p>
-            <ul>
-              <li>Memimpin dan mengoordinasikan pengurus menjalankan program kerja 1 periode</li>
-              <li>Mengawasi kinerja tiap divisi agar kegiatan berjalan sesuai target dan timeline</li>
-              <li>Mengawal proker utama: Workshop UI/UX, Temu Wicara, dan Company Visit</li>
-              <li>Mewakili organisasi dalam kolaborasi eksternal (IMSI)</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="exp-card">
-          <div class="exp-card__icons">
-            <i class="fa-solid fa-laptop-code"></i>
-          </div>
-
-          <div class="exp-card__desc">
-            <h4>Programmer (PKL) — Learning X Academy</h4>
-            <p class="small-muted">2022 – 2023</p>
-            <ul>
-              <li>Latihan dasar coding dengan duplikasi UI Instagram, Facebook, dan Shopee</li>
-              <li>Kolaborasi tim (6 orang) dalam pengembangan website company profile</li>
-              <li>Mengimplementasikan desain UI/UX yang telah disetujui client menjadi website</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
+      <h2>Experience</h2>
+      <div class="experience-cards" id="experience-cards"></div>
     </section>
 
     <!-- Projects Section -->
     <section class="projects-section" id="projects">
-      <h2>Proyek <span>Saya</span></h2>
+      <h2>Projects</h2>
+      <div class="projects-cards" id="projects-cards"></div>
 
-      <div class="projects-cards">
+    </section>
 
-        <div class="projects-card-box">
-          <div class="projects-card-box__icons">
-            <i class="fa fa-motorcycle"></i>
-          </div>
-          <div class="projects-card-box__desc">
-            <h4>Web - Classic Motors</h4>
-            <p>Website katalog motor berbasis web dengan penyajian Informasi dan pertimbangan pengguna.</p>
-          </div>
-          <div class="projects-card-box__buttons">
-            <a href="https://okeanos404.github.io/Classic-Motors-web/" class="btn btn-dark-outlined" target="_blank">
-              Lihat <i class="fa-solid fa-external-link"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="projects-card-box">
-          <div class="projects-card-box__icons">
-            <i class="fa fa-graduation-cap"></i>
-          </div>
-          <div class="projects-card-box__desc">
-            <h4>Web - Mini SIAKAD</h4>
-            <p>Website sistem informasi akademik sederhana berbasis web dengan fitur login dan dashboard.</p>
-          </div>
-          <div class="projects-card-box__buttons">
-            <a href="https://okeanos404.github.io/Mini-SIAKAD-web/" class="btn btn-dark-outlined" target="_blank">
-              Lihat <i class="fa-solid fa-external-link"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="projects-card-box">
-          <div class="projects-card-box__icons">
-            <i class="fa fa-camera-retro"></i>
-          </div>
-          <div class="projects-card-box__desc">
-            <h4>Web — Photobooth</h4>
-            <p>Photobooth berbasis web dengan fitur capture gambar dan download</p>
-          </div>
-          <div class="projects-card-box__buttons">
-            <a href="https://okeanos404.github.io/Photobooth-web/" class="btn btn-dark-outlined" target="_blank">
-              Lihat <i class="fa-solid fa-external-link"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="projects-card-box">
-          <div class="projects-card-box__icons">
-            <i class="fa fa-leaf"></i>
-          </div>
-          <div class="projects-card-box__desc">
-            <h4>Web — Ecopedia</h4>
-            <p>Ensiklopedia tentang pengetahuan sampah berbasis web</p>
-          </div>
-          <div class="projects-card-box__buttons">
-            <a href="https://okeanos404.github.io/EcoPedia-web/" class="btn btn-dark-outlined" target="_blank">
-              Lihat <i class="fa-solid fa-external-link"></i>
-            </a>
-          </div>
-        </div>
-
+    <!-- ===== CERTIFICATES SECTION ===== -->
+    <section class="certificates-section" id="certificates">
+      <h2>Certificates</h2>
+      <div class="certificates-grid">
+        <div class="cert-item"><img src="assets/images/certification/Sertifikat_pkl_1.png" alt="Sertifikat 1"></div>
+        <div class="cert-item"><img src="assets/images/certification/Sertifikat_pkl_2.png" alt="Sertifikat 2"></div>
+        <div class="cert-item"><img src="assets/images/certification/Sertifikat_pkl_3.png" alt="Sertifikat 3"></div>
       </div>
     </section>
 
+    <!-- ===== ACTIVITY GALLERY (Marquee) ===== -->
+    <section class="gallery-section" id="gallery">
+      <h2>Gallery</h2>
+      <div class="marquee-container">
+        <!-- Set 1 -->
+        <div class="marquee-content">
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_1.png" alt="Galeri 1"></div>
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_2.png" alt="Galeri 2"></div>
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_3.png" alt="Galeri 3"></div>
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_4.png" alt="Galeri 4"></div>
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_5.png" alt="Galeri 5"></div>
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_6.png" alt="Galeri 6"></div>
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_7.png" alt="Galeri 7"></div>
+        </div>
+        <!-- Set 2 -->
+        <div class="marquee-content" aria-hidden="true">
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_1.png" alt="Galeri 1"></div>
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_2.png" alt="Galeri 2"></div>
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_3.png" alt="Galeri 3"></div>
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_4.png" alt="Galeri 4"></div>
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_5.png" alt="Galeri 5"></div>
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_6.png" alt="Galeri 6"></div>
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_7.png" alt="Galeri 7"></div>
+        </div>
+        <!-- Set 3 -->
+        <div class="marquee-content" aria-hidden="true">
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_1.png" alt="Galeri 1"></div>
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_2.png" alt="Galeri 2"></div>
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_3.png" alt="Galeri 3"></div>
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_4.png" alt="Galeri 4"></div>
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_5.png" alt="Galeri 5"></div>
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_6.png" alt="Galeri 6"></div>
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_7.png" alt="Galeri 7"></div>
+        </div>
+        <!-- Set 4 -->
+        <div class="marquee-content" aria-hidden="true">
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_1.png" alt="Galeri 1"></div>
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_2.png" alt="Galeri 2"></div>
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_3.png" alt="Galeri 3"></div>
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_4.png" alt="Galeri 4"></div>
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_5.png" alt="Galeri 5"></div>
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_6.png" alt="Galeri 6"></div>
+          <div class="marquee-item"><img src="assets/images/gallery/galeri_7.png" alt="Galeri 7"></div>
+        </div>
+      </div>
+    </section>
+
+
     <!-- Contact Section -->
     <section class="contact-section" id="contact">
-      <h2>Hubungi <span>Saya</span></h2>
-
+      <h2>Contact</h2>
       <p class="contact-note">Anda dapat menghubungi saya melalui:</p>
-
       <div class="contact-buttons">
         <a href="mailto:riyansamuel6@gmail.com" class="btn btn-primary">
           <i class="fa-solid fa-envelope"></i> Email
         </a>
-
         <a href="https://wa.me/6281286983212" target="_blank" class="btn btn-dark-outlined">
           <i class="fa-brands fa-whatsapp"></i> WhatsApp
         </a>
-
         <a href="https://github.com/Okeanos404" target="_blank" class="btn btn-dark-outlined">
           <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/riyan-samuel-harahap-7589393a4" target="_blank" class="btn btn-dark-outlined">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
         </a>
       </div>
     </section>
@@ -248,10 +229,24 @@
     </footer>
   </main>
 
-  <!-- Back to top -->
-  <button id="backToTop" class="backToTop" aria-label="Kembali ke atas">
-    <i class="fa-solid fa-arrow-up"></i>
-  </button>
+  <!-- Modal Proyek -->
+  <div class="modal" id="project-modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3 id="modal-title"></h3>
+      <p id="modal-description"></p>
+      <a href="#" id="modal-link" target="_blank" class="btn btn-primary">Kunjungi Proyek</a>
+    </div>
+  </div>
+
+  <!-- Back to top (SVG Progress) -->
+<button id="backToTop" class="backToTop" aria-label="Kembali ke atas">
+  <svg width="46" height="46" viewBox="0 0 46 46">
+    <!-- Progress rect (merah) -->
+    <rect id="progress-rect" x="2" y="2" width="42" height="42" rx="8" fill="none" stroke="var(--primary)" stroke-width="2" stroke-dasharray="168" stroke-dashoffset="168"/>
+    <text x="23" y="23" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="28" font-weight="700">↑</text>
+  </svg>
+</button>
 
   <script src="js/script.js"></script>
 </body>
