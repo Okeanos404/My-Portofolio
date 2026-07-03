@@ -14,12 +14,13 @@ Personal portfolio website built to showcase my profile, experience, skills, and
 Recently, this portfolio underwent a massive visual overhaul, transforming into a vibrant, dynamic underwater experience inspired by **SpongeBob SquarePants (Bikini Bottom)**!
 
 ✨ **New Features Include:**
-- **Time Card Splash Screen:** A classic SpongeBob pastel floral loading screen that transitions beautifully when clicked.
+- **Time Card Splash Screen:** A classic SpongeBob pastel floral loading screen that transitions beautifully, now guarded by custom vector art of the Chum Bucket and Mr. Krabs' Anchor.
+- **Dynamic 3D Jellyfish Engine:** An advanced JavaScript generator that spawns infinite combinations of SpongeBob-style jellyfish! It randomizes head shapes, tilt angles, horizontal flips, and dynamically generates unique bezier-curve tentacles (S-curves) for every single jellyfish in real-time.
+- **Cartoon Steel Plates Background:** The contact section features a procedurally generated, overlapping cartoon metal plate background using JavaScript, complete with randomly sized iron rivets along the edges, mimicking the Chum Bucket interior.
 - **Custom Bubble Cursor:** An interactive, animated SVG bubble cursor that "squishes" when hovering over interactive elements.
 - **Antigravity Animations:** Floating and bobbing animations on images, icons, and cards to simulate a living underwater environment.
 - **Character-Themed Colors:** Utilizing the iconic palettes of Bikini Bottom citizens (SpongeBob Yellow, Mr. Krabs Red, Squidward Teal, Patrick Pink) across UI components.
 - **Infinite Gallery Slider:** A smooth, auto-scrolling marquee slider showcasing organizational documentation and activities.
-- **Chum Bucket Contact Section:** A metallic/rusty bucket-colored contact block holding the colorful character buttons.
 
 ---
 

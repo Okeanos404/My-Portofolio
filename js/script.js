@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderSkills();
   renderExperience();
   renderProjects();
+  generateChumBucketDesign();
   setTimeout(typeEffect, 1000);
   initScrollObserver();
   initCustomCursor();
@@ -35,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   generateBubbles();
+  generateJellyfish();
   initCoverflow();
 });
 
@@ -49,7 +51,7 @@ function generateBubbles() {
     bubble.classList.add('bubble');
     
     // Randomize size, position, and delay
-    const size = Math.random() * 30 + 10; // 10px to 40px
+    const size = Math.random() * 30 + 15; // 15px to 45px
     const left = Math.random() * 100; // 0% to 100%
     const delay = Math.random() * 10; // 0s to 10s
     const duration = Math.random() * 5 + 8; // 8s to 13s
@@ -61,6 +63,227 @@ function generateBubbles() {
     bubble.style.animationDuration = `${duration}s`;
     
     container.appendChild(bubble);
+  }
+}
+
+// ==================== JELLYFISH GENERATOR ====================
+function generateJellyfish() {
+  const container = document.querySelector('.bubbles-container');
+  if (!container) return;
+
+  const jellyfishCount = 7; // Number of jellyfish
+  
+  // 3 Variasi Kepala Ubur-ubur bergaya kartun SpongeBob (tanpa tentakel)
+  const domes = [
+    // Variant 1: Classic
+    `
+      <path d="M 15 70 C 15 0, 105 0, 105 70 Q 115 85, 95 85 Q 80 95, 75 85 Q 60 95, 45 85 Q 30 95, 25 85 Q 5 85, 15 70 Z" fill="#e479d2" stroke="#ffffff" stroke-width="5" stroke-linejoin="round"/>
+      <circle cx="85" cy="35" r="10" fill="#a0256a"/>
+      <circle cx="92" cy="55" r="5" fill="#a0256a"/>
+      <circle cx="45" cy="65" r="14" fill="#a0256a"/>
+      <ellipse cx="65" cy="20" rx="12" ry="7" fill="#a0256a" transform="rotate(15 65 20)"/>
+      <path d="M 22 55 Q 32 45, 24 35 Q 34 25, 28 15" stroke="#f1b3e6" stroke-width="6" fill="none" stroke-linecap="round"/>
+    `,
+    // Variant 2: Tall
+    `
+      <path d="M 25 70 C 25 -10, 95 -10, 95 70 Q 105 85, 85 85 Q 70 95, 60 85 Q 50 95, 35 85 Q 15 85, 25 70 Z" fill="#e479d2" stroke="#ffffff" stroke-width="5" stroke-linejoin="round"/>
+      <circle cx="50" cy="35" r="11" fill="#a0256a"/>
+      <circle cx="75" cy="55" r="8" fill="#a0256a"/>
+      <circle cx="75" cy="25" r="5" fill="#a0256a"/>
+      <path d="M 32 50 Q 40 40, 33 30 Q 41 20, 35 12" stroke="#f1b3e6" stroke-width="5" fill="none" stroke-linecap="round"/>
+    `,
+    // Variant 3: Squat
+    `
+      <path d="M 10 70 C 10 15, 110 15, 110 70 Q 120 85, 100 85 Q 85 95, 70 85 Q 55 95, 40 85 Q 25 95, 10 85 Z" fill="#e479d2" stroke="#ffffff" stroke-width="5" stroke-linejoin="round"/>
+      <ellipse cx="85" cy="45" rx="14" ry="7" fill="#a0256a" transform="rotate(-15 85 45)"/>
+      <circle cx="35" cy="55" r="9" fill="#a0256a"/>
+      <circle cx="55" cy="30" r="7" fill="#a0256a"/>
+      <path d="M 18 55 Q 26 45, 19 35" stroke="#f1b3e6" stroke-width="6" fill="none" stroke-linecap="round"/>
+    `
+  ];
+
+  for (let i = 0; i < jellyfishCount; i++) {
+    const jelly = document.createElement('div');
+    jelly.classList.add('jellyfish');
+    
+    // Dynamically generate unique but neat tentacles
+    const numTentacles = Math.floor(Math.random() * 2) + 3; // 3 or 4 tentacles (keeps it neat)
+    let tentaclesHTML = '';
+    
+    // Narrower base so tentacles stay under the dome nicely
+    const startXOffset = 25; 
+    const availableWidth = 70; // 25 to 95
+    // Spacing between tentacles
+    const spacing = numTentacles > 1 ? availableWidth / (numTentacles - 1) : 0;
+    
+    for (let t = 0; t < numTentacles; t++) {
+      // Base starting point perfectly spaced
+      const startX = startXOffset + (t * spacing) + (Math.random() * 6 - 3); // slight random shift
+      const startY = 80;
+      
+      // Direction of the first wave (left or right)
+      const swayDir = Math.random() > 0.5 ? 1 : -1;
+      
+      // Strength of the wave (keeps them in their lane, max 15px sway)
+      const waveStr = 10 + Math.random() * 5; 
+      
+      // First curve (sway out)
+      const cp1X = startX + (swayDir * waveStr);
+      const cp1Y = 105 + (Math.random() * 10 - 5);
+      
+      // Mid point (return near center)
+      const midX = startX + (swayDir * (waveStr * 0.3));
+      const midY = 130 + (Math.random() * 10 - 5);
+      
+      // Second curve (sway the other way for S-shape)
+      const cp2X = startX - (swayDir * waveStr);
+      const cp2Y = 150 + (Math.random() * 10 - 5);
+      
+      // End point (curling slightly up like real SpongeBob jellyfish)
+      const endX = startX - (swayDir * waveStr * 0.8);
+      const endY = 140 + (Math.random() * 10 - 5);
+      
+      tentaclesHTML += `<path d="M ${startX} ${startY} Q ${cp1X} ${cp1Y}, ${midX} ${midY} Q ${cp2X} ${cp2Y}, ${endX} ${endY}"/>\n`;
+    }
+
+    const randomDome = domes[Math.floor(Math.random() * domes.length)];
+    
+    const svgHTML = `
+      <svg width="100%" height="100%" viewBox="0 0 120 180" xmlns="http://www.w3.org/2000/svg">
+        <!-- White outer stroke for tentacles -->
+        <g stroke="#ffffff" stroke-width="16" fill="none" stroke-linecap="round">
+          ${tentaclesHTML}
+        </g>
+        <!-- Pink inner fill for tentacles -->
+        <g stroke="#e479d2" stroke-width="10" fill="none" stroke-linecap="round">
+          ${tentaclesHTML}
+        </g>
+        <!-- Dome and spots -->
+        ${randomDome}
+      </svg>
+    `;
+    
+    jelly.innerHTML = svgHTML;
+    
+    // Randomize size, position, and delay
+    const size = Math.random() * 40 + 50; // 50px to 90px
+    const left = Math.random() * 100; // 0% to 100%
+    const delay = Math.random() * 15; // 0s to 15s
+    const duration = Math.random() * 10 + 15; // 15s to 25s
+
+    jelly.style.width = `${size}px`;
+    jelly.style.height = `${size}px`;
+    jelly.style.left = `${left}%`;
+    jelly.style.animationDelay = `${delay}s`;
+    jelly.style.animationDuration = `${duration}s`;
+
+    // Randomize pose (Flip X and Rotation)
+    const isFlipped = Math.random() > 0.5 ? -1 : 1;
+    const randomRotation = (Math.random() - 0.5) * 30; // -15deg to 15deg
+    
+    // Randomize inner wiggle animation & pose
+    const svgElement = jelly.querySelector('svg');
+    if (svgElement) {
+      const wiggleDuration = Math.random() * 2 + 3; // 3s to 5s
+      const wiggleDelay = Math.random() * 5; // 0s to 5s
+      svgElement.style.animationDuration = `${wiggleDuration}s`;
+      svgElement.style.animationDelay = `-${wiggleDelay}s`; // Negative delay so it starts mid-animation
+      
+      // Apply unique pose transform
+      svgElement.style.transform = `scaleX(${isFlipped}) rotate(${randomRotation}deg)`;
+    }
+    
+    container.appendChild(jelly);
+  }
+}
+
+// ==================== CHUM BUCKET BACKGROUND ====================
+function generateChumBucketDesign() {
+  const container = document.getElementById('chum-bucket-bg');
+  if (!container) return;
+  
+  container.innerHTML = ''; // Clear existing
+  
+  const width = Math.max(container.clientWidth || 2500, 2500);
+  const height = Math.max(container.clientHeight || 800, 800);
+  
+  const patchSize = 150; 
+  const colors = ['#286b8c', '#2c7ba3', '#398bb5', '#1a587a', '#22638a'];
+  
+  // Create patches
+  for (let y = -50; y < height + 50; y += patchSize * 0.75) {
+    for (let x = -50; x < width + 50; x += patchSize * 0.75) {
+      const patch = document.createElement('div');
+      patch.classList.add('metal-patch');
+      
+      const pWidth = patchSize + (Math.random() * 80 - 40);
+      const pHeight = patchSize + (Math.random() * 80 - 40);
+      const pColor = colors[Math.floor(Math.random() * colors.length)];
+      const pRot = (Math.random() - 0.5) * 10; // -5 to 5 degrees
+      
+      // Random offset to make it look scattered
+      const oX = (Math.random() - 0.5) * 60;
+      const oY = (Math.random() - 0.5) * 60;
+      
+      patch.style.width = `${pWidth}px`;
+      patch.style.height = `${pHeight}px`;
+      patch.style.left = `${x + oX}px`;
+      patch.style.top = `${y + oY}px`;
+      patch.style.backgroundColor = pColor;
+      patch.style.transform = `rotate(${pRot}deg)`;
+      
+      // Add rivets to the 4 inner edges of this patch
+      addRivetsToEdge(patch, pWidth, pHeight, 'top');
+      addRivetsToEdge(patch, pWidth, pHeight, 'bottom');
+      addRivetsToEdge(patch, pWidth, pHeight, 'left');
+      addRivetsToEdge(patch, pWidth, pHeight, 'right');
+      
+      container.appendChild(patch);
+    }
+  }
+}
+
+function addRivetsToEdge(patch, width, height, edge) {
+  const rivetSpacing = 35; // Jarak antar paku
+  const margin = 8; // Jarak dari tepi patch
+  
+  let length = (edge === 'top' || edge === 'bottom') ? width : height;
+  let numRivets = Math.floor((length - margin * 2) / rivetSpacing);
+  
+  for (let i = 0; i <= numRivets; i++) {
+    const rivet = document.createElement('div');
+    rivet.classList.add('chum-rivet');
+    
+    // Random size for the rivet (tidak terlalu besar)
+    const size = 5 + Math.random() * 4; // 5px to 9px
+    rivet.style.width = `${size}px`;
+    rivet.style.height = `${size}px`;
+    
+    // Random rotation for the highlight
+    const rot = Math.random() * 360;
+    
+    let pos = margin + (i * rivetSpacing) + (Math.random() * 8 - 4);
+    
+    if (edge === 'top') {
+      rivet.style.top = `${margin}px`;
+      rivet.style.left = `${pos}px`;
+      rivet.style.transform = `translate(-50%, -50%) rotate(${rot}deg)`;
+    } else if (edge === 'bottom') {
+      rivet.style.bottom = `${margin}px`;
+      rivet.style.left = `${pos}px`;
+      // for bottom edge, the center is margin from bottom. 
+      rivet.style.transform = `translate(-50%, 50%) rotate(${rot}deg)`;
+    } else if (edge === 'left') {
+      rivet.style.left = `${margin}px`;
+      rivet.style.top = `${pos}px`;
+      rivet.style.transform = `translate(-50%, -50%) rotate(${rot}deg)`;
+    } else if (edge === 'right') {
+      rivet.style.right = `${margin}px`;
+      rivet.style.top = `${pos}px`;
+      rivet.style.transform = `translate(50%, -50%) rotate(${rot}deg)`;
+    }
+    
+    patch.appendChild(rivet);
   }
 }
 
@@ -164,7 +387,23 @@ function renderSkills() {
   if (!list) return;
   list.innerHTML = skillsData.map((skill, index) => `
     <li class="fade-up" style="transition-delay: ${index * 0.05}s">
-      <i class="fa-solid fa-check"></i> ${skill}
+      <svg width="24" height="24" viewBox="0 0 100 100" style="filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5)); vertical-align: middle; flex-shrink: 0;">
+        <defs>
+          <radialGradient id="gradRed" cx="30%" cy="30%" r="70%">
+            <stop offset="0%" stop-color="#ff7b7b"/>
+            <stop offset="100%" stop-color="#cc0000"/>
+          </radialGradient>
+          <radialGradient id="gradWhite" cx="30%" cy="30%" r="70%">
+            <stop offset="0%" stop-color="#ffffff"/>
+            <stop offset="100%" stop-color="#dddddd"/>
+          </radialGradient>
+        </defs>
+        <circle cx="50" cy="50" r="35" fill="none" stroke="url(#gradWhite)" stroke-width="20"/>
+        <circle cx="50" cy="50" r="35" fill="none" stroke="url(#gradRed)" stroke-width="20" stroke-dasharray="27.5 27.5"/>
+        <circle cx="50" cy="50" r="48" fill="none" stroke="#fff" stroke-width="2" opacity="0.8"/>
+        <circle cx="50" cy="50" r="22" fill="none" stroke="#fff" stroke-width="2" opacity="0.8"/>
+      </svg>
+      ${skill}
     </li>
   `).join('');
 }
