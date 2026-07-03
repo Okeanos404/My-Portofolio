@@ -17,7 +17,7 @@ Recently, this portfolio underwent a massive visual overhaul, transforming into 
 - **Time Card Splash Screen:** A classic SpongeBob pastel floral loading screen that transitions beautifully, now guarded by custom vector art of the Chum Bucket and Mr. Krabs' Anchor.
 - **Dynamic 3D Jellyfish Engine:** An advanced JavaScript generator that spawns infinite combinations of SpongeBob-style jellyfish! It randomizes head shapes, tilt angles, horizontal flips, and dynamically generates unique bezier-curve tentacles (S-curves) for every single jellyfish in real-time.
 - **Cartoon Steel Plates Background:** The contact section features a procedurally generated, overlapping cartoon metal plate background using JavaScript, complete with randomly sized iron rivets along the edges, mimicking the Chum Bucket interior.
-- **Custom Bubble Cursor:** An interactive, animated SVG bubble cursor that "squishes" when hovering over interactive elements.
+- **Spatula Custom Cursor:** An interactive, animated SVG spatula cursor inspired by SpongeBob, featuring a growing pink highlight effect when hovering over interactive elements.
 - **Antigravity Animations:** Floating and bobbing animations on images, icons, and cards to simulate a living underwater environment.
 - **Character-Themed Colors:** Utilizing the iconic palettes of Bikini Bottom citizens (SpongeBob Yellow, Mr. Krabs Red, Squidward Teal, Patrick Pink) across UI components.
 - **Infinite Gallery Slider:** A smooth, auto-scrolling marquee slider showcasing organizational documentation and activities.
@@ -104,11 +104,11 @@ No framework, no library — built with **pure fundamentals**.
 
 - **Responsive Layout** (desktop & mobile friendly)
 - **Time Card Splash Screen**
-- **Custom SVG Animated Cursor**
+- **Spatula Custom SVG Cursor**
 - **Smooth Scrolling Navigation** with Hover Effects
 - **Active Navbar Highlight** on scroll
 - **Infinite Auto-Scrolling Marquee Gallery**
-- **Back-to-top Button** with circular SVG scroll progress
+- **Sandy's Rocket Back-to-top Button** with blast-off NOS animation and scroll progress
 - **Downloadable CV**
 - **Thematic UI** with cartoon borders, vibrant colors, and floating "Antigravity" effects
 
