@@ -34,8 +34,11 @@ body {
   background: linear-gradient(180deg, #1CB5E0 0%, #000046 100%);
   background-attachment: fixed;
   color: var(--white);
-  /* Custom bubble cursor */
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="white" stroke-width="2"/><circle cx="8" cy="8" r="2" fill="white"/></svg>') 12 12, auto;
+}
+
+/* Custom spatula cursor (applied to interactive elements too so it doesn't disappear) */
+body, a, button, .btn, .social-icons li, .exp-card, .projects-card-box, .cert-item img, .marquee-item img, .hamburger {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 64 64"><g transform="rotate(-45 32 32)"><path d="M 26 38 C 24 45, 26 56, 28 58 C 30 60, 34 60, 36 58 C 38 56, 40 45, 38 38 Z" fill="%232d2222" stroke="%23000" stroke-width="3" stroke-linejoin="round"/><rect x="30" y="24" width="4" height="15" fill="%23939ba6" stroke="%23000" stroke-width="3"/><path d="M 22 10 C 22 4, 42 4, 42 10 L 38 24 L 26 24 Z" fill="%23939ba6" stroke="%23000" stroke-width="3" stroke-linejoin="round"/><line x1="28" y1="10" x2="28" y2="19" stroke="%23000" stroke-width="2.5" stroke-linecap="round"/><line x1="32" y1="10" x2="32" y2="19" stroke="%23000" stroke-width="2.5" stroke-linecap="round"/><line x1="36" y1="10" x2="36" y2="19" stroke="%23000" stroke-width="2.5" stroke-linecap="round"/></g></svg>') 9 9, auto !important;
 }
 
 /* Header */
@@ -56,12 +59,21 @@ header {
 
 header div > a { text-decoration: none; }
 
+@keyframes colorCycle {
+  0% { color: var(--primary); }
+  25% { color: var(--accent-red); }
+  50% { color: var(--accent-teal); }
+  75% { color: var(--accent-pink); }
+  100% { color: var(--primary); }
+}
+
 header .logo {
   color: var(--primary);
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
   font-size: 14px;
+  animation: colorCycle 8s infinite alternate;
 }
 
 header ul {
@@ -656,6 +668,18 @@ footer {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
+}
+
+@keyframes rocketShake {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-1px, 1px); }
+  50% { transform: translate(1px, -1px); }
+  75% { transform: translate(-1px, -1px); }
+  100% { transform: translate(0, 0); }
+}
+
+.backToTop.blast-off #rocket-svg {
+  animation: rocketShake 0.1s infinite;
 }
 
 .backToTop svg {
@@ -1255,7 +1279,7 @@ section#contact h2, section#contact p, section#contact .contact-note {
 }
 
 .exp-card__icons i {
-  color: var(--accent-teal) !important;
+  color: var(--accent-red) !important;
 }
 
 /* Antigravity Animation */
@@ -1303,22 +1327,26 @@ section#contact h2, section#contact p, section#contact .contact-note {
 
 .bubble {
   position: absolute;
-  bottom: -50px;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05) 50%, transparent 100%);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 50%;
-  box-shadow: inset -5px -5px 15px rgba(255, 255, 255, 0.1), inset 2px 2px 5px rgba(255, 255, 255, 0.3), 2px 2px 10px rgba(0, 0, 0, 0.05);
-  animation: floatBubble 10s infinite ease-in;
+  bottom: -100px;
+  background: transparent;
+  border: none;
+  animation: riseBubble 10s infinite linear;
 }
 
-@keyframes floatBubble {
-  0% { transform: translateY(0) translateX(0) scale(0.8); opacity: 0; }
-  15% { opacity: 1; }
-  30% { transform: translateY(-30vh) translateX(30px) scale(1); }
-  50% { transform: translateY(-50vh) translateX(-20px) scale(1.1); }
-  70% { transform: translateY(-70vh) translateX(25px) scale(1.2); }
+.bubble-inner {
+  animation: wiggleBubble 3s infinite ease-in-out alternate;
+}
+
+@keyframes riseBubble {
+  0% { transform: translateY(0) scale(0.8); opacity: 0; }
+  10% { opacity: 1; }
   85% { opacity: 1; }
-  100% { transform: translateY(-120vh) translateX(-30px) scale(1.5); opacity: 0; }
+  100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
+}
+
+@keyframes wiggleBubble {
+  0% { transform: translateX(-30px); }
+  100% { transform: translateX(30px); }
 }
 
 /* Jellyfish Animation */
@@ -1387,6 +1415,11 @@ section#contact h2, section#contact p, section#contact .contact-note {
     font-size: 28px;
   }
 
+  /* Center Social Icons & Buttons on Mobile */
+  .social-icons, .hero-buttons {
+    justify-content: center;
+  }
+
   /* Contact / Iron Plates area padding */
   section#contact {
     padding: 60px 20px 80px 20px !important;
@@ -1397,5 +1430,17 @@ section#contact h2, section#contact p, section#contact .contact-note {
     flex-direction: column !important;
     gap: 20px;
     align-items: center;
+  }
+
+  /* Certificates Section */
+  section.certificates-section {
+    padding: 60px 15px;
+  }
+  .certificates-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .cert-item img {
+    border-radius: 6px;
   }
 }

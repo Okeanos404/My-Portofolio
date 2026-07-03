@@ -50,17 +50,43 @@ function generateBubbles() {
     const bubble = document.createElement('div');
     bubble.classList.add('bubble');
     
+    // SVG markup for bubble without outline, resembling the provided image
+    bubble.innerHTML = `
+      <div class="bubble-inner" style="width:100%; height:100%;">
+        <svg viewBox="0 0 100 100" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="48" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" />
+          <path d="M 15 50 A 35 35 0 0 1 50 15" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" opacity="0.85"/>
+          <path d="M 22 50 A 28 28 0 0 1 50 22" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+          <circle cx="28" cy="28" r="4.5" fill="#ffffff" opacity="0.9"/>
+          <path d="M 82 50 A 32 32 0 0 1 50 82" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+        </svg>
+      </div>
+    `;
+    
     // Randomize size, position, and delay
-    const size = Math.random() * 30 + 15; // 15px to 45px
+    const size = Math.random() * 45 + 15; // 15px to 60px
     const left = Math.random() * 100; // 0% to 100%
     const delay = Math.random() * 10; // 0s to 10s
     const duration = Math.random() * 5 + 8; // 8s to 13s
+    const wiggleDuration = Math.random() * 2 + 2; // 2s to 4s
 
     bubble.style.width = `${size}px`;
     bubble.style.height = `${size}px`;
     bubble.style.left = `${left}%`;
     bubble.style.animationDelay = `${delay}s`;
     bubble.style.animationDuration = `${duration}s`;
+    
+    // Set separate wiggle animation duration for this bubble
+    const inner = bubble.querySelector('.bubble-inner');
+    inner.style.animationDuration = `${wiggleDuration}s`;
+    inner.style.animationDelay = `${delay}s`;
+
+    // Random rotation and opacity for variation
+    const rotation = Math.random() * 360;
+    const opacity = Math.random() * 0.6 + 0.4; // 0.4 to 1.0
+    const svg = bubble.querySelector('svg');
+    svg.style.transform = `rotate(${rotation}deg)`;
+    svg.style.opacity = opacity;
     
     container.appendChild(bubble);
   }
@@ -559,6 +585,18 @@ if (backToTop && progressRect) {
       backToTop.classList.add("show");
     } else {
       backToTop.classList.remove("show");
+    }
+
+    // Rocket blast off effect when full
+    const rocketFire = document.getElementById("rocket-fire");
+    if (rocketFire) {
+      if (scrollPercent >= 0.98) {
+        rocketFire.style.opacity = "1";
+        backToTop.classList.add("blast-off");
+      } else {
+        rocketFire.style.opacity = "0";
+        backToTop.classList.remove("blast-off");
+      }
     }
   });
 
