@@ -379,9 +379,9 @@ const projectsData = [
       "assets/images/web photo/Siakad_3.png",
       "assets/images/web photo/Siakad_4.png"
     ],
-    title: "Web - Mini SIAKAD",
+    title: "Web - SIAP Merdeka SMA",
     description: "Website sistem informasi akademik sederhana berbasis web dengan fitur login dan dashboard.",
-    link: "https://okeanos404.github.io/Mini-SIAKAD-web/"
+    link: "https://okeanos404.github.io/SIAP-Merdeka-SMA/"
   },
   {
     images: [

@@ -121,7 +121,7 @@ No framework, no library — built with **pure fundamentals**.
 - **Classic Motors Web**  
   Static website for showcasing classic motorcycles
 
-- **Mini SIAKAD Web**  
+- **SIAP Merdeka SMA**  
   Simple academic system interface design
 
 - **Photobooth Web App**  
