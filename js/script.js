@@ -1,10 +1,11 @@
 // ==================== INISIALISASI ====================
 document.addEventListener('DOMContentLoaded', () => {
+  prepareHeroAnimation(); // Siapkan dan sembunyikan elemen hero dari awal agar tidak berkedip
+
   renderSkills();
   renderExperience();
   renderProjects();
   generateChumBucketDesign();
-  setTimeout(typeEffect, 1000);
   initScrollObserver();
   initCustomCursor();
   initProjectModal();
@@ -22,16 +23,22 @@ document.addEventListener('DOMContentLoaded', () => {
           const skeleton = document.querySelector('.skeleton-screen');
           if (skeleton) {
             skeleton.classList.remove('hide');
-            // Setelah 1 detik, sembunyikan skeleton
+            // Setelah 1 detik, mulai transisi halus
             setTimeout(() => {
-              skeleton.classList.add('hide');
+              skeleton.classList.add('hide'); // Skeleton mulai memudar (500ms transition)
+              playHeroAnimation(); // Elemen hero mulai masuk sehingga animasinya saling melengkapi (smooth)
+              
               setTimeout(() => {
                 skeleton.style.display = 'none';
               }, 500);
             }, 1000);
+          } else {
+            playHeroAnimation();
           }
         }, 800); // Waktu transisi splash screen
       });
+    } else {
+      playHeroAnimation();
     }
   });
 
@@ -39,6 +46,57 @@ document.addEventListener('DOMContentLoaded', () => {
   generateJellyfish();
   initCoverflow();
 });
+
+// ==================== HERO SECTION ANIMATION ====================
+function prepareHeroAnimation() {
+  const profileImg = document.querySelector('.about-img img');
+  if (profileImg) {
+    profileImg.style.opacity = 0; // Sembunyikan gambar
+  }
+
+  const heroElements = document.querySelectorAll('.about-content h4, .about-content h2, .about-content p, .social-icons li, .hero-buttons a, .skills-section');
+  heroElements.forEach(el => {
+    el.style.opacity = 0; // Sembunyikan elemen
+    el.style.transform = 'translateY(30px)'; // Turunkan sedikit ke bawah
+  });
+}
+
+function playHeroAnimation() {
+  const profileImg = document.querySelector('.about-img img');
+  if (profileImg) {
+    profileImg.classList.remove('antigravity');
+    
+    anime({
+      targets: profileImg,
+      scale: [0, 1], 
+      rotateY: [1080, 0], // Berputar seperti koin
+      opacity: [0, 1],
+      duration: 2000,
+      easing: 'easeOutElastic(1, .6)',
+      complete: function() {
+         profileImg.classList.add('antigravity');
+      }
+    });
+  }
+
+  const heroElements = document.querySelectorAll('.about-content h4, .about-content h2, .about-content p, .social-icons li, .hero-buttons a, .skills-section');
+  
+  if (heroElements.length > 0) {
+    anime({
+      targets: heroElements,
+      translateY: [30, 0],
+      opacity: [0, 1],
+      duration: 1000,
+      delay: anime.stagger(150, {start: 200}), // Mulai sedikit lebih awal berbarengan dengan skeleton fade out
+      easing: 'easeOutQuint',
+      complete: function() {
+        typeEffect();
+      }
+    });
+  } else {
+    typeEffect();
+  }
+}
 
 // ==================== BUBBLES GENERATOR ====================
 function generateBubbles() {
@@ -814,46 +872,54 @@ function initCoverflow() {
   const minScale = 0.65;
 
   function updatePositions() {
-  items.forEach((item, i) => {
-    let angle = (i - currentIndex) * angleStep;
-    if (angle > 180) angle -= 360;
-    if (angle < -180) angle += 360;
+    items.forEach((item, i) => {
+      let angle = (i - currentIndex) * angleStep;
+      if (angle > 180) angle -= 360;
+      if (angle < -180) angle += 360;
 
-    const rad = angle * Math.PI / 180;
-    const z = Math.sin(rad) * radius;
-    const xOffset = Math.sin(rad) * 360;
+      const rad = angle * Math.PI / 180;
+      const z = Math.sin(rad) * radius;
+      const xOffset = Math.sin(rad) * 360;
 
-    let scale, opacity, brightness;
+      let scale, opacity, brightness;
 
-    if (angle === 0) {
-      // Gambar tengah: besar, penuh cahaya, tidak tembus
-      scale = 1.5;
-      opacity = 1;
-      brightness = 1;
-      item.style.zIndex = 10;      // item tengah di atas
-    } else {
-      // Gambar samping: lebih kecil, redup, transparan
-      scale = 1.5 - (Math.abs(angle) / 180) * (1.5 - minScale);
-      scale = Math.max(minScale, Math.min(1.5, scale));
-      opacity = 0.4;          // nilai lebih rendah untuk kontras
-      brightness = 0.5;       // lebih redup
-      item.style.zIndex = 1;       // item samping di bawah
-    }
+      if (angle === 0) {
+        scale = 1.5;
+        opacity = 1;
+        brightness = 1;
+        item.style.zIndex = 10;
+      } else {
+        scale = 1.5 - (Math.abs(angle) / 180) * (1.5 - minScale);
+        scale = Math.max(minScale, Math.min(1.5, scale));
+        opacity = 0.4;
+        brightness = 0.5;
+        item.style.zIndex = 1;
+      }
 
-    // Terapkan transformasi
-    item.style.transform = `translateX(${xOffset}px) translateZ(${z}px) rotateY(${angle}deg) scale(${scale})`;
-    item.style.opacity = opacity;
-    item.style.filter = `brightness(${brightness})`;
-    item.classList.toggle('active', angle === 0);
-  });
-}
+      item.classList.toggle('active', angle === 0);
+      item.style.transition = 'none'; // Matikan transisi statis CSS
+
+      // Menggunakan AnimeJS untuk pergerakan 3D
+      anime({
+        targets: item,
+        translateX: xOffset,
+        translateZ: z,
+        rotateY: angle,
+        scale: scale,
+        opacity: opacity,
+        filter: `brightness(${brightness})`,
+        easing: 'easeOutElastic(1, .6)', // Bouncy elastic effect
+        duration: 1000
+      });
+    });
+  }
 
   function moveTo(index) {
     if (isAnimating) return;
     isAnimating = true;
     currentIndex = index;
     updatePositions();
-    setTimeout(() => { isAnimating = false; }, 600);
+    setTimeout(() => { isAnimating = false; }, 800);
     updateIndicators();
   }
 
