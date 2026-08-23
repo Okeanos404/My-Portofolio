@@ -504,12 +504,24 @@ function typeEffect() {
   }
 }
 
-// ==================== SCROLL ANIMATION (FADE-UP) ====================
+// ==================== SCROLL ANIMATION (FADE-UP & ANIMEJS) ====================
 function initScrollObserver() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('show');
+        
+        // Tambahan Animasi Anime.js saat elemen terlihat
+        if (entry.target.classList.contains('cert-item')) {
+          anime({
+            targets: entry.target,
+            translateY: [50, 0],
+            opacity: [0, 1],
+            easing: 'easeOutElastic(1, .8)',
+            duration: 1200
+          });
+        }
+        
         observer.unobserve(entry.target); // hanya sekali
       }
     });
@@ -518,6 +530,11 @@ function initScrollObserver() {
   // Observasi semua elemen dengan class fade-up (akan ditambahkan setelah render)
   setTimeout(() => {
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    // Observasi sertifikat juga
+    document.querySelectorAll('.cert-item').forEach(el => {
+      el.style.opacity = 0; // Sembunyikan awal agar dianimasikan
+      observer.observe(el);
+    });
   }, 100);
 }
 
@@ -744,7 +761,7 @@ if (canvas) {
   animate();
 }
 
-// ==================== COUNTER STATISTIK ====================
+// ==================== COUNTER STATISTIK (DENGAN ANIME.JS) ====================
 const statsSection = document.getElementById('stats');
 if (statsSection) {
   const statNumbers = document.querySelectorAll('.stat-number');
@@ -756,18 +773,14 @@ if (statsSection) {
         counted = true;
         statNumbers.forEach(stat => {
           const target = parseInt(stat.getAttribute('data-target'), 10);
-          let current = 0;
-          const increment = target / 50; // naik dalam 50 langkah
-          const updateCounter = () => {
-            current += increment;
-            if (current < target) {
-              stat.textContent = Math.ceil(current);
-              requestAnimationFrame(updateCounter);
-            } else {
-              stat.textContent = target;
-            }
-          };
-          updateCounter();
+          
+          anime({
+            targets: stat,
+            innerHTML: [0, target],
+            easing: 'linear',
+            round: 1, // Membulatkan angka
+            duration: 2000
+          });
         });
         statsObserver.unobserve(entry.target);
       }

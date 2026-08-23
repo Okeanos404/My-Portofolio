@@ -1434,13 +1434,20 @@ section#contact h2, section#contact p, section#contact .contact-note {
 
   /* Certificates Section */
   section.certificates-section {
-    padding: 60px 15px;
+    padding: 60px 20px;
   }
   .certificates-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .cert-item {
+    display: flex;
+    justify-content: center;
   }
   .cert-item img {
-    border-radius: 6px;
+    border-radius: 8px;
+    max-width: 280px; /* Lebar dibatasi agar tidak terlalu raksasa */
+    width: 100%;
+    height: auto;
   }
 }
