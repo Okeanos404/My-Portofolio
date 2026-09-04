@@ -1,345 +1,408 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Riyan Samuel Harahap — Portfolio</title>
-  <link rel="icon" href="assets/favicon.ico">
-
+  <title>Okeanos404 - Portfolio</title>
+  <link rel="icon" type="image/jpeg" href="assets/favicon.ico">
+  
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/a9cdbedf57.js" crossorigin="anonymous"></script>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Press+Start+2P&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- SPLASH SCREEN -->
-  <div class="preloader">
-    <div class="welcome-text-container">
-      <h1 class="welcome-text">
-        <span class="icon-float-left splash-icon">
-          <svg viewBox="0 -15 100 135" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-            <!-- Handle -->
-            <path d="M 20 60 C 20 -10, 80 -10, 80 60" fill="none" stroke="#5d7285" stroke-width="4"/>
-            <!-- Glove holding the handle -->
-            <path d="M 35 10 C 35 -10, 65 -10, 65 10 C 70 10, 70 25, 65 30 C 65 40, 35 40, 35 30 C 30 25, 30 10, 35 10 Z" fill="#6a5acd" stroke="#222" stroke-width="2"/>
-            <path d="M 40 25 L 60 25" stroke="#222" stroke-width="3" stroke-linecap="round"/>
-            <path d="M 45 25 L 45 20 M 55 25 L 55 20" stroke="#222" stroke-width="2"/>
-            <!-- Bucket Body -->
-            <path d="M 15 50 L 85 50 L 78 115 C 70 120, 30 120, 22 115 Z" fill="#6e7f8e" stroke="#222" stroke-width="3"/>
-            <ellipse cx="50" cy="50" rx="35" ry="10" fill="#586775" stroke="#222" stroke-width="3"/>
-            <!-- Doors -->
-            <rect x="38" y="85" width="24" height="28" fill="#cd853f" stroke="#222" stroke-width="2"/>
-            <line x1="50" y1="85" x2="50" y2="113" stroke="#222" stroke-width="2"/>
-            <circle cx="44" cy="98" r="3" fill="#add8e6" stroke="#222" stroke-width="1.5"/>
-            <circle cx="56" cy="98" r="3" fill="#add8e6" stroke="#222" stroke-width="1.5"/>
-            <!-- Text (with built-in stroke instead of relying on heavy CSS drop-shadow) -->
-            <text x="50" y="70" font-family="Arial, sans-serif" font-weight="900" font-size="16" fill="#ff3333" stroke="#8b0000" stroke-width="1" text-anchor="middle" transform="rotate(-4, 50, 70)">CHUM</text>
-            <text x="50" y="84" font-family="Arial, sans-serif" font-weight="900" font-size="14" fill="#ff3333" stroke="#8b0000" stroke-width="1" text-anchor="middle" transform="rotate(-4, 50, 84)">BUCKET</text>
-          </svg>
-        </span>
-        Welcome to my Portofolio
-        <span class="icon-float-right splash-icon">
-          <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-            <!-- Anchor Base/Stem -->
-            <path d="M 60 30 L 60 100" stroke="#162947" stroke-width="25" stroke-linecap="round"/>
-            <path d="M 60 30 L 60 100" stroke="#1f375a" stroke-width="20" stroke-linecap="round"/>
-            <!-- Top Crossbar -->
-            <path d="M 25 40 L 95 40" stroke="#162947" stroke-width="15" stroke-linecap="round"/>
-            <path d="M 25 40 L 95 40" stroke="#1f375a" stroke-width="10" stroke-linecap="round"/>
-            <!-- Top Ring -->
-            <circle cx="60" cy="20" r="12" fill="none" stroke="#1f375a" stroke-width="10"/>
-            <!-- Bottom Curve (Anchor hooks) -->
-            <path d="M 20 70 C 10 115, 110 115, 100 70" fill="none" stroke="#162947" stroke-width="24" stroke-linecap="round"/>
-            <path d="M 20 70 C 15 110, 105 110, 100 70" fill="none" stroke="#1f375a" stroke-width="18" stroke-linecap="round"/>
-            <!-- Left House -->
-            <path d="M 5 60 L 25 60 L 25 75 L 5 75 Z" fill="#1f375a"/>
-            <path d="M 0 60 L 15 45 L 30 60 Z" fill="#8b1a1a" stroke="#222" stroke-width="2"/>
-            <rect x="10" y="65" width="10" height="12" fill="#ffdead" stroke="#222" stroke-width="1.5"/>
-            <circle cx="15" cy="85" r="5" fill="#add8e6" stroke="#222" stroke-width="1.5"/>
-            <!-- Right House -->
-            <path d="M 95 60 L 115 60 L 115 75 L 95 75 Z" fill="#1f375a"/>
-            <path d="M 90 60 L 105 45 L 120 60 Z" fill="#8b1a1a" stroke="#222" stroke-width="2"/>
-            <rect x="100" y="65" width="10" height="12" fill="#ffdead" stroke="#222" stroke-width="1.5"/>
-            <path d="M 112 55 L 112 45 L 116 45 L 116 58 Z" fill="#666" stroke="#222" stroke-width="1"/>
-            <!-- Main Door -->
-            <path d="M 45 110 C 45 90, 75 90, 75 110 Z" fill="#cd853f" stroke="#222" stroke-width="2"/>
-            <line x1="50" y1="95" x2="50" y2="110" stroke="#222" stroke-width="1.5"/>
-            <line x1="55" y1="92" x2="55" y2="110" stroke="#222" stroke-width="1.5"/>
-            <line x1="60" y1="91" x2="60" y2="110" stroke="#222" stroke-width="1.5"/>
-            <line x1="65" y1="92" x2="65" y2="110" stroke="#222" stroke-width="1.5"/>
-            <line x1="70" y1="95" x2="70" y2="110" stroke="#222" stroke-width="1.5"/>
-            <!-- Door Ring -->
-            <circle cx="60" cy="102" r="4" fill="none" stroke="#c0c0c0" stroke-width="2"/>
-            <circle cx="60" cy="97" r="1.5" fill="#c0c0c0"/>
-          </svg>
-        </span>
-      </h1>
-      <p class="click-hint"><i class="fa-solid fa-hand-pointer"></i> Klik dimana saja untuk masuk</p>
-    </div>
-  </div>
 
-  <!-- SKELETON SCREEN -->
-  <div class="skeleton-screen">
-    <div class="skeleton-container">
-      <div class="skeleton-header"></div>
-      <div class="skeleton-about"></div>
-      <div class="skeleton-stats"></div>
-      <div class="skeleton-exp"></div>
-      <div class="skeleton-projects"></div>
-      <div class="skeleton-carousel"></div>
-    </div>
-  </div>
-
-  <div class="bubbles-container"></div>
-
-  <!-- Custom Cursor -->
-  <div class="custom-cursor"></div>
-
-  <!-- Header -->
-  <header>
-    <div>
-      <a href="#about">
-        <span class="logo">Portfolio</span>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <i class="fa-solid fa-code"></i> OKEANOS<span>404</span>
       </a>
-    </div>
+      
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-    <!-- Hamburger -->
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <nav id="navMenu">
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#about" class="active">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-links">
+          <li><a href="#hero" class="active"><i class="fa-solid fa-home"></i> HOME</a></li>
+          <li><a href="#about"><i class="fa-solid fa-user"></i> ABOUT</a></li>
+          <li><a href="#projects"><i class="fa-solid fa-briefcase"></i> PROJECTS</a></li>
+          <li><a href="#services"><i class="fa-solid fa-server"></i> SERVICES</a></li>
+          <li><a href="#skills"><i class="fa-solid fa-code-branch"></i> SKILLS</a></li>
         </ul>
-    </nav>
+      </nav>
+
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
   </header>
 
-  <!-- Main Content -->
   <main>
-    <!-- About / Hero Section -->
-    <section class="about-section" id="about">
-      <div class="about-img">
-        <img src="assets/images/foto-riyan.png" alt="Foto Riyan Samuel Harahap" class="antigravity" />
-      </div>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section section-padding">
+      <div class="hero-container container">
+        <div class="hero-content fade-in-up">
+          <h4 class="hero-greeting">HI, I'M <span id="typed-text" class="text-accent-blue"></span><span class="cursor">|</span></h4>
+          <h1 class="hero-title glitch-text" data-text="CODE BY OKEANOS404">CODE BY <span class="text-accent-blue">OKEANOS404</span></h1>
+          <h2 class="hero-subtitle"><span class="text-accent">WEB DEVELOPER</span> <br>& <span class="text-accent-alt">DATA ANALYST</span></h2>
+          
+          <p class="hero-desc">
+            Saya berfokus pada pengembangan web dan analisis data, dengan keahlian menggunakan PHP (Laravel), JavaScript, serta Python dan SQL.
+          </p>
+          
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">View Projects <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="assets/CV-Riyan-Samuel-Harahap.pdf" class="btn btn-outline" download>Download CV <i class="fa-solid fa-download"></i></a>
+          </div>
 
-      <div class="about-content">
-        <h4>Hai, Selamat Datang!</h4>
-        <h2>Saya <span id="typed-text"></span></h2>
-
-        <p>
-          Saya Riyan Samuel Harahap, mahasiswa aktif semester 6 Program Studi Sistem Informasi di Universitas Krisnadwipayana yang berfokus pada pengembangan web dan analisis data. Memiliki keahlian teknis dalam menggunakan PHP (Laravel), JavaScript, serta Python dan SQL untuk pengolahan data dasar. Berpengalaman memimpin Himpunan Mahasiswa Sistem Informasi (HIMASI) yang membentuk keterampilan manajemen proyek, komunikasi, dan pemecahan masalah. Siap berkontribusi dan berkembang sebagai Magang Data Analyst atau IT/Web Developer.
-        </p>
-
-        <ul class="social-icons">
-          <li><a href="https://www.linkedin.com/in/riyan-samuel-harahap-7589393a4" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
-          <li><a href="https://www.instagram.com/riyaannnns_?igsh=MTZodXo2aDRncTEzZA==" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
-          <li><a href="https://github.com/Okeanos404" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a></li>
-          <li><a href="mailto:riyansamuel6@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a></li>
-        </ul>
-
-        <!-- CTA Buttons -->
-        <div class="hero-buttons">
-          <a href="#contact" class="btn btn-primary" title="Hubungi saya">
-            Hubungi Saya
-          </a>
-          <a href="assets/CV-Riyan-Samuel-Harahap.pdf" class="btn btn-dark-outlined" download>
-            Download CV <i class="fa-solid fa-download"></i>
-          </a>
+          <div class="hero-stats">
+            <div class="stat-box">
+              <i class="fa-solid fa-star"></i>
+              <div class="stat-info">
+                <h3>2</h3>
+                <p>EXPERIENCES</p>
+              </div>
+            </div>
+            <div class="stat-box">
+              <i class="fa-solid fa-briefcase"></i>
+              <div class="stat-info">
+                <h3>4</h3>
+                <p>COMPLETED PROJECTS</p>
+              </div>
+            </div>
+            <div class="stat-box">
+              <i class="fa-solid fa-laptop-code"></i>
+              <div class="stat-info">
+                <h3>14</h3>
+                <p>TECHNOLOGIES</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Skills Section (akan diisi JS) -->
-        <div class="skills-section">
-          <h3>Keahlian</h3>
-          <ul class="skills-list" id="skills-list"></ul>
+        <div class="hero-visual fade-in-up delay-1">
+          <div class="profile-card">
+            <div class="profile-frame">
+              <div class="image-wrapper">
+                <img src="assets/images/foto-riyan.png" alt="Riyan Samuel Harahap" class="profile-img" />
+                <div class="pixel-overlay"></div>
+              </div>
+            </div>
+            <div class="connect-box">
+              <p class="connect-title"><i class="fa-solid fa-comment-dots"></i> LET'S CONNECT:</p>
+              <div class="connect-links">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=riyansamuel6@gmail.com" target="_blank" class="btn-small"><i class="fa-regular fa-envelope"></i> Email</a>
+                <a href="https://www.linkedin.com/in/riyan-samuel-harahap-7589393a4" target="_blank" class="btn-small"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+                <a href="https://github.com/Okeanos404" target="_blank" class="btn-small"><i class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Stats Section (baru) -->
-    <section class="stats-section" id="stats">
-      <div class="stats-container">
-        <div class="stat-item">
-          <span class="stat-number" data-target="16">0</span>
-          <span class="stat-label">Total Repository</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number" data-target="3">0</span>
-          <span class="stat-label">Pengalaman</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number" data-target="9">0</span>
-          <span class="stat-label">Keahlian</span>
+    <!-- Geographic Node / About (Interactive Terminal) -->
+    <section id="about" class="about-section section-padding bg-alt">
+      <div class="container fade-in-up">
+        <div class="terminal-card">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="terminal-title">ABOUT_OKEANOS_404 - ROOT</div>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-sidebar">
+              <div class="sidebar-title">DIRECTIVES:</div>
+              <ul class="sidebar-list" id="about-tabs">
+                <li class="active" data-panel="identity"><i class="fa-solid fa-folder"></i> Identity</li>
+                <li data-panel="education"><i class="fa-solid fa-folder"></i> education.md</li>
+                <li data-panel="location"><i class="fa-solid fa-folder-open"></i> location.md</li>
+              </ul>
+            </div>
+            
+            <div class="terminal-content">
+              <!-- Panel 1: Identity -->
+              <div id="panel-identity" class="about-panel active">
+                <div class="content-header">
+                  <span class="path">// ACTIVE: ROOT/IDENTITY</span>
+                </div>
+                <h2 class="node-title">Hello, World.</h2>
+                <div class="node-content-split">
+                  <div class="node-text">
+                    <p class="node-desc">Mahasiswa Sistem Informasi yang berfokus pada pengembangan web dan analisis data. Berpengalaman memimpin organisasi mahasiswa (HIMASI) yang mengasah kemampuan manajemen proyek, kini saya siap berkontribusi sebagai Magang Data Analyst atau Web Developer.</p>
+                    <table class="about-table">
+                      <tr><td>Name</td><td>Riyan Samuel Harahap</td></tr>
+                      <tr><td>Role</td><td>Web Developer & Data Analyst</td></tr>
+                      <tr><td>Status</td><td><span class="status-dot"></span> Available for hire / collaboration</td></tr>
+                    </table>
+                  </div>
+                  <div class="node-image-container">
+                    <div class="terminal-mockup">
+                      <div class="mockup-header"><span></span><span></span><span></span></div>
+                      <div class="mockup-body">
+                        <span class="code-comment">// HELLO_WORLD!</span>
+                        <span class="code-cursor">_</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Panel 2: Education -->
+              <div id="panel-education" class="about-panel" style="display: none;">
+                <div class="content-header">
+                  <span class="path">// ACTIVE: ROOT/EDUCATION.MD</span>
+                </div>
+                <h2 class="node-title">Academic Background.</h2>
+                <div class="node-content-split">
+                  <div class="node-text">
+                    <p class="node-desc">Saat ini saya menempuh pendidikan di perguruan tinggi dengan antusiasme besar untuk mengembangkan keterampilan teknis saya melalui proyek-proyek praktis.</p>
+                    <table class="about-table">
+                      <tr><td>University</td><td>Universitas Krisnadwipayana</td></tr>
+                      <tr><td>Faculty</td><td>Fakultas Teknik</td></tr>
+                      <tr><td>Major</td><td>Sistem Informasi</td></tr>
+                      <tr><td>Status</td><td><span class="status-dot"></span> Semester 7</td></tr>
+                    </table>
+                  </div>
+                  <div class="node-image-container image-bracket">
+                    <!-- Menggunakan aset dari gallery untuk background akademik -->
+                    <img src="assets/images/gallery/galeri_1.png" alt="University Campus" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Panel 3: Location -->
+              <div id="panel-location" class="about-panel" style="display: none;">
+                <div class="content-header">
+                  <span class="path">// ACTIVE: ROOT/LOCATION.MD</span>
+                </div>
+                <h2 class="node-title">Geographic Node.</h2>
+                <div class="node-content-split">
+                  <div class="node-text">
+                    <p class="node-desc">Operating locally from Jakarta City, with full availability for remote collaboration globally.</p>
+                    <table class="about-table">
+                      <tr><td>Base</td><td>Jakarta City, Indonesia</td></tr>
+                      <tr><td>Timezone</td><td>UTC+7 (Western Indonesia Time)</td></tr>
+                      <tr><td>Status</td><td><span class="status-dot"></span> Active</td></tr>
+                    </table>
+                  </div>
+                  <div class="node-image-container image-bracket">
+                    <div class="node-map">
+                      <svg viewBox="0 0 450 180" class="abstract-map">
+                        <defs>
+                          <!-- Hatch Pattern for Island Fill -->
+                          <pattern id="diagonalHatch" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+                            <line x1="0" y1="0" x2="0" y2="8" stroke="var(--accent-blue)" stroke-width="1.5" opacity="0.3" />
+                          </pattern>
+                          <!-- Glow Effect -->
+                          <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="3" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                          </filter>
+                        </defs>
+
+                        <!-- Background Tech Grid -->
+                        <g stroke="var(--accent-blue)" stroke-width="1" opacity="0.15">
+                          <line x1="0" y1="30" x2="450" y2="30" />
+                          <line x1="0" y1="60" x2="450" y2="60" />
+                          <line x1="0" y1="90" x2="450" y2="90" />
+                          <line x1="0" y1="120" x2="450" y2="120" />
+                          <line x1="0" y1="150" x2="450" y2="150" />
+                          <line x1="50" y1="0" x2="50" y2="180" />
+                          <line x1="100" y1="0" x2="100" y2="180" />
+                          <line x1="150" y1="0" x2="150" y2="180" />
+                          <line x1="200" y1="0" x2="200" y2="180" />
+                          <line x1="250" y1="0" x2="250" y2="180" />
+                          <line x1="300" y1="0" x2="300" y2="180" />
+                          <line x1="350" y1="0" x2="350" y2="180" />
+                          <line x1="400" y1="0" x2="400" y2="180" />
+                        </g>
+                        
+                        <!-- Floating Text -->
+                        <g fill="var(--text-muted)" font-size="10" font-family="monospace" opacity="0.8">
+                          <text x="430" y="30" text-anchor="end">NODE_01_ACTIVE</text>
+                          <text x="430" y="45" text-anchor="end">LAT:-6.2088</text>
+                          <text x="430" y="60" text-anchor="end">LNG:106.8456</text>
+                          <text x="15" y="150">SCANNING...</text>
+                        </g>
+
+                        <!-- Java Island Polygon -->
+                        <polygon points="13,54 40,22 81,31 157,54 243,63 252,45 315,63 346,76 369,99 418,121 423,144 391,126 342,117 319,117 274,121 238,103 180,99 162,99 126,99 67,67" 
+                                 fill="var(--accent-blue)" opacity="0.35" />
+                        <polygon points="13,54 40,22 81,31 157,54 243,63 252,45 315,63 346,76 369,99 418,121 423,144 391,126 342,117 319,117 274,121 238,103 180,99 162,99 126,99 67,67" 
+                                 fill="none"
+                                 stroke="var(--text-main)" 
+                                 stroke-width="5" 
+                                 stroke-linejoin="round" />
+                                 
+                        <!-- Network Lines & Sub-Nodes (Bandung, Semarang, Surabaya) -->
+                        <path d="M81,31 L120,60 L243,63 L346,76" fill="none" stroke="var(--accent-blue)" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.6" />
+                        <circle cx="120" cy="60" r="3" fill="var(--text-main)" />
+                        <circle cx="243" cy="63" r="3" fill="var(--text-main)" />
+                        <circle cx="346" cy="76" r="3" fill="var(--text-main)" />
+
+                        <!-- Main Jakarta Node -->
+                        <g class="map-node">
+                          <circle cx="81" cy="31" r="5" fill="var(--accent-blue)" filter="url(#glow)" class="pulse" />
+                          <circle cx="81" cy="31" r="14" fill="none" stroke="var(--accent-blue)" stroke-width="2" opacity="0.8" />
+                          
+                          <!-- Rotating Outer Ring -->
+                          <circle cx="81" cy="31" r="22" fill="none" stroke="var(--accent-blue)" stroke-width="1.5" stroke-dasharray="4,8" opacity="0.5">
+                            <animateTransform attributeName="transform" type="rotate" from="0 81 31" to="360 81 31" dur="15s" repeatCount="indefinite" />
+                          </circle>
+                          
+                          <!-- Coordinate Pointer -->
+                          <path d="M81,31 L81,10 L50,10" fill="none" stroke="var(--accent-blue)" stroke-width="2" />
+                          <rect x="15" y="0" width="35" height="20" fill="var(--bg-card)" stroke="var(--accent-blue)" stroke-width="2" />
+                          <text x="32" y="14" fill="var(--accent-blue)" font-size="12" font-family="monospace" font-weight="bold" text-anchor="middle">JKT</text>
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section class="experience-section" id="experience">
-      <h2>Experience</h2>
-      <div class="experience-cards" id="experience-cards"></div>
     </section>
 
     <!-- Projects Section -->
-    <section class="projects-section" id="projects">
-      <h2>Projects</h2>
-      <div class="projects-cards" id="projects-cards"></div>
-
-    </section>
-
-    <!-- ===== CERTIFICATES SECTION ===== -->
-    <section class="certificates-section" id="certificates">
-      <h2>Certificates</h2>
-      <div class="certificates-grid">
-        <div class="cert-item"><img src="assets/images/certification/Sertifikat_pkl_1.png" alt="Sertifikat 1"></div>
-        <div class="cert-item"><img src="assets/images/certification/Sertifikat_pkl_2.png" alt="Sertifikat 2"></div>
-        <div class="cert-item"><img src="assets/images/certification/Sertifikat_pkl_3.png" alt="Sertifikat 3"></div>
-      </div>
-    </section>
-
-    <!-- ===== ACTIVITY GALLERY (Marquee) ===== -->
-    <section class="gallery-section" id="gallery">
-      <h2>Gallery</h2>
-      <div class="marquee-container">
-        <!-- Set 1 -->
-        <div class="marquee-content">
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_1.png" alt="Galeri 1"></div>
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_2.png" alt="Galeri 2"></div>
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_3.png" alt="Galeri 3"></div>
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_4.png" alt="Galeri 4"></div>
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_5.png" alt="Galeri 5"></div>
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_6.png" alt="Galeri 6"></div>
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_7.png" alt="Galeri 7"></div>
+    <section id="projects" class="projects-section section-padding">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-tag">// SHOWCASE</span>
+          <h2 class="section-title">Selected Project</h2>
+          <a href="https://github.com/Okeanos404" target="_blank" class="view-all">View All Projects...</a>
         </div>
-        <!-- Set 2 -->
-        <div class="marquee-content" aria-hidden="true">
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_1.png" alt="Galeri 1"></div>
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_2.png" alt="Galeri 2"></div>
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_3.png" alt="Galeri 3"></div>
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_4.png" alt="Galeri 4"></div>
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_5.png" alt="Galeri 5"></div>
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_6.png" alt="Galeri 6"></div>
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_7.png" alt="Galeri 7"></div>
-        </div>
-        <!-- Set 3 -->
-        <div class="marquee-content" aria-hidden="true">
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_1.png" alt="Galeri 1"></div>
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_2.png" alt="Galeri 2"></div>
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_3.png" alt="Galeri 3"></div>
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_4.png" alt="Galeri 4"></div>
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_5.png" alt="Galeri 5"></div>
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_6.png" alt="Galeri 6"></div>
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_7.png" alt="Galeri 7"></div>
-        </div>
-        <!-- Set 4 -->
-        <div class="marquee-content" aria-hidden="true">
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_1.png" alt="Galeri 1"></div>
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_2.png" alt="Galeri 2"></div>
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_3.png" alt="Galeri 3"></div>
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_4.png" alt="Galeri 4"></div>
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_5.png" alt="Galeri 5"></div>
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_6.png" alt="Galeri 6"></div>
-          <div class="marquee-item"><img src="assets/images/gallery/galeri_7.png" alt="Galeri 7"></div>
+        
+        <div class="projects-grid" id="projects-grid">
+          <!-- Projects will be rendered here by JS -->
         </div>
       </div>
     </section>
 
-
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-      <div class="chum-bucket-bg" id="chum-bucket-bg"></div>
-      <div class="contact-content" style="position: relative; z-index: 10;">
-        <h2>Contact</h2>
-        <p class="contact-note">Anda dapat menghubungi saya melalui:</p>
-        <div class="contact-buttons">
-          <a href="mailto:riyansamuel6@gmail.com" class="btn btn-primary">
-            <i class="fa-solid fa-envelope"></i> Email
-          </a>
-          <a href="https://wa.me/6281286983212" target="_blank" class="btn btn-dark-outlined">
-            <i class="fa-brands fa-whatsapp"></i> WhatsApp
-          </a>
-          <a href="https://github.com/Okeanos404" target="_blank" class="btn btn-dark-outlined">
-            <i class="fa-brands fa-github"></i> GitHub
-          </a>
-          <a href="https://www.linkedin.com/in/riyan-samuel-harahap-7589393a4" target="_blank" class="btn btn-dark-outlined">
-            <i class="fa-brands fa-linkedin"></i> LinkedIn
-          </a>
+    <!-- Services / What I Do Section -->
+    <section id="services" class="services-section section-padding bg-alt">
+      <div class="container fade-in-up">
+        <div class="section-header">
+          <span class="section-tag">// SERVICES & EXPERTISE</span>
+          <h2 class="section-title">What I Do</h2>
+        </div>
+        <div class="services-grid" id="services-grid">
+          <!-- Services will be rendered here by JS (Alternating Dark/Light bracket cards) -->
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-      <p>© <span id="year"></span> Riyan Samuel Harahap • Portfolio</p>
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section section-padding">
+      <div class="container fade-in-up">
+        <div class="section-header">
+          <span class="section-tag">// TECH STACK & TOOLS</span>
+          <h2 class="section-title">My Expertise</h2>
+        </div>
+
+        <div class="skills-container">
+          <div class="skills-sidebar">
+            <ul class="skills-tabs" id="skills-tabs">
+              <li class="tab-item active" data-target="frontend">
+                <i class="fa-solid fa-desktop"></i> Frontend <span class="count">4</span>
+              </li>
+              <li class="tab-item" data-target="backend">
+                <i class="fa-solid fa-server"></i> Backend <span class="count">3</span>
+              </li>
+              <li class="tab-item" data-target="languages">
+                <i class="fa-solid fa-code"></i> Languages <span class="count">3</span>
+              </li>
+              <li class="tab-item" data-target="design">
+                <i class="fa-solid fa-pen-nib"></i> Design & Editing <span class="count">3</span>
+              </li>
+              <li class="tab-item" data-target="tools">
+                <i class="fa-solid fa-wrench"></i> Tools & OS <span class="count">4</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="skills-content-area">
+            <div class="skills-grid" id="skills-grid">
+              <!-- Skills will be rendered here by JS based on active tab -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Contact & Footer -->
+    <footer class="footer section-padding bg-alt">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-info">
+            <h2 class="footer-title">Let's Build Together.</h2>
+            <div class="footer-links">
+               <a href="https://mail.google.com/mail/?view=cm&fs=1&to=riyansamuel6@gmail.com" target="_blank">riyansamuel6@gmail.com</a>
+            </div>
+            <p class="availability"><span class="dot"></span> Available For Select Opportunities</p>
+          </div>
+          <div class="footer-nav">
+            <div class="nav-col">
+              <h4>NAVIGATION</h4>
+              <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#skills">Skills</a></li>
+              </ul>
+            </div>
+            <div class="nav-col">
+              <h4>SOCIALS</h4>
+              <div class="social-icons">
+                <a href="https://github.com/Okeanos404" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/riyan-samuel-harahap-7589393a4" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/riyaannnns_?igsh=MTZodXo2aDRncTEzZA==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+              </div>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=riyansamuel6@gmail.com" target="_blank" class="btn btn-outline btn-sm mt-3"><i class="fa-solid fa-envelope"></i> Get In Touch</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© <span id="year"></span> Okeanos404. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
   </main>
 
-  <!-- Modal Proyek -->
+  <!-- Project Modal -->
   <div class="modal" id="project-modal">
     <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <h3 id="modal-title"></h3>
-      <p id="modal-description"></p>
-      <a href="#" id="modal-link" target="_blank" class="btn btn-primary">Kunjungi Proyek</a>
+      <div class="modal-header">
+        <h3 id="modal-title">Project Title</h3>
+        <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-image-container" id="modal-images"></div>
+        <p id="modal-description" class="mt-3"></p>
+      </div>
+      <div class="modal-footer">
+        <a href="#" id="modal-link" target="_blank" class="btn btn-primary">Visit Project <i class="fa-solid fa-external-link-alt"></i></a>
+      </div>
     </div>
   </div>
 
-  <!-- Back to top (SVG Progress) -->
-<button id="backToTop" class="backToTop" aria-label="Kembali ke atas">
-  <svg width="46" height="46" viewBox="0 0 46 46">
-    <!-- Progress rect (merah) -->
-    <rect id="progress-rect" x="2" y="2" width="42" height="42" rx="8" fill="none" stroke="var(--accent-red)" stroke-width="2" stroke-dasharray="168" stroke-dashoffset="168"/>
-    <!-- Sandy's Rocket Icon -->
-    <svg id="rocket-svg" x="9" y="8" width="28" height="35" viewBox="0 0 100 140">
-      <!-- Fire (Hidden by default) -->
-      <g id="rocket-fire" style="opacity: 0; transition: opacity 0.2s;">
-        <!-- Outer Red Flame -->
-        <path d="M 40 98 C 40 120, 45 140, 50 140 C 55 140, 60 120, 60 98 Z" fill="#ff4d4d"/>
-        <!-- Inner Orange Flame -->
-        <path d="M 43 98 C 43 115, 47 125, 50 125 C 53 125, 57 115, 57 98 Z" fill="#ffaa00"/>
-        <!-- Core White Flame -->
-        <path d="M 46 98 C 46 105, 48 110, 50 110 C 52 110, 54 105, 54 98 Z" fill="#ffffff"/>
-      </g>
-      <!-- Thruster -->
-      <path d="M 40 90 L 60 90 L 55 100 L 45 100 Z" fill="#999" stroke="#111" stroke-width="4" stroke-linejoin="round"/>
-      <!-- Fins (left, right) -->
-      <path d="M 30 70 C 0 70, 0 105, 12 105 C 18 105, 30 80, 30 80 Z" fill="#ff4d4d" stroke="#111" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M 70 70 C 100 70, 100 105, 88 105 C 82 105, 70 80, 70 80 Z" fill="#ff4d4d" stroke="#111" stroke-width="4" stroke-linejoin="round"/>
-      <!-- Antenna -->
-      <line x1="50" y1="20" x2="50" y2="6" stroke="#111" stroke-width="4" stroke-linecap="round"/>
-      <circle cx="50" cy="5" r="4" fill="#e0e0e0" stroke="#111" stroke-width="3"/>
-      <!-- Body -->
-      <path d="M 30 40 C 30 5, 70 5, 70 40 L 70 90 C 70 95, 30 95, 30 90 Z" fill="#9ec1d3" stroke="#111" stroke-width="4" stroke-linejoin="round"/>
-      <!-- Top Window -->
-      <circle cx="50" cy="35" r="10" fill="#4deeea" stroke="#111" stroke-width="4"/>
-      <circle cx="53" cy="32" r="2.5" fill="#fff" opacity="0.7"/> <!-- glare -->
-      <!-- Door -->
-      <rect x="42" y="55" width="16" height="28" rx="8" fill="#7a9bab" stroke="#111" stroke-width="3"/>
-      <!-- Rivets -->
-      <circle cx="35" cy="55" r="1.5" fill="#111"/>
-      <circle cx="35" cy="70" r="1.5" fill="#111"/>
-      <circle cx="35" cy="85" r="1.5" fill="#111"/>
-      <circle cx="65" cy="55" r="1.5" fill="#111"/>
-      <circle cx="65" cy="70" r="1.5" fill="#111"/>
-      <circle cx="65" cy="85" r="1.5" fill="#111"/>
-    </svg>
-  </svg>
-</button>
-
-  <!-- Anime.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

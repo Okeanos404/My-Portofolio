@@ -10,17 +10,16 @@ Personal portfolio website built to showcase my profile, experience, skills, and
 
 ---
 
-## 🧽 Bikini Bottom & Antigravity Theme (UI Overhaul)
-Recently, this portfolio underwent a massive visual overhaul, transforming into a vibrant, dynamic underwater experience inspired by **SpongeBob SquarePants (Bikini Bottom)**!
+## 💻 Neo-Brutalist & Terminal Theme (UI Overhaul)
+Recently, this portfolio underwent a massive visual overhaul, transforming into a sharp, high-contrast, and developer-focused experience inspired by **Neo-Brutalism and Cyberpunk Terminal UI**!
 
 ✨ **New Features Include:**
-- **Time Card Splash Screen:** A classic SpongeBob pastel floral loading screen that transitions beautifully, now guarded by custom vector art of the Chum Bucket and Mr. Krabs' Anchor.
-- **Dynamic 3D Jellyfish Engine:** An advanced JavaScript generator that spawns infinite combinations of SpongeBob-style jellyfish! It randomizes head shapes, tilt angles, horizontal flips, and dynamically generates unique bezier-curve tentacles (S-curves) for every single jellyfish in real-time.
-- **Cartoon Steel Plates Background:** The contact section features a procedurally generated, overlapping cartoon metal plate background using JavaScript, complete with randomly sized iron rivets along the edges, mimicking the Chum Bucket interior.
-- **Spatula Custom Cursor:** An interactive, animated SVG spatula cursor inspired by SpongeBob, featuring a growing pink highlight effect when hovering over interactive elements.
-- **Antigravity Animations:** Floating and bobbing animations on images, icons, and cards to simulate a living underwater environment.
-- **Character-Themed Colors:** Utilizing the iconic palettes of Bikini Bottom citizens (SpongeBob Yellow, Mr. Krabs Red, Squidward Teal, Patrick Pink) across UI components.
-- **Infinite Gallery Slider:** A smooth, auto-scrolling marquee slider showcasing organizational documentation and activities.
+- **Interactive Terminal Interface:** The "About" section is designed as a fully functional command-line terminal, complete with interactive folder tabs (Identity, education.md, location.md) and a blinking cursor.
+- **Dynamic Typing Animation:** A custom JavaScript-powered typing effect on the hero section that greets visitors and dynamically types out the identity text.
+- **Neo-Brutalist Aesthetics:** Bold typography (Space Mono, Orbitron), harsh black borders, solid drop shadows, and a high-contrast black/white/blue color palette that emphasizes raw structural elements.
+- **Custom Infinite Marquee:** A smooth, auto-scrolling running text banner showcasing the tech stack and tools in a sleek ticker-tape style.
+- **Grid-Based Brutalist Layouts:** Sharp, compartmentalized 2-column and responsive grid layouts for Projects and Services, ensuring maximum readability and structure.
+- **Fully Responsive Architecture:** Custom mobile-first adaptations ensuring the brutalist design remains pixel-perfect, readable, and functional on any device size.
 
 ---
 
@@ -31,7 +30,7 @@ This portfolio website serves as my personal branding platform, containing:
 - Professional profile & introduction  
 - Organizational and internship experience  
 - List of technical & soft skills  
-- Selected web projects (Infinite Gallery & Project Cards)
+- Selected web projects
 - Contact & social media links  
 
 The main goal of this project is to present myself not only as a **coder**, but also as a **team leader and adaptable learner**.
@@ -41,10 +40,10 @@ The main goal of this project is to present myself not only as a **coder**, but 
 ## 🛠️ Tech Stack
 
 - **HTML5** — Semantic structure  
-- **CSS3** — Custom styling, animations, and the entire Bikini Bottom theme  
-- **JavaScript (Vanilla)** — Interactive behavior, Splash screen logic, dynamic bubble cursor, and typed text effect.  
+- **CSS3** — Custom styling, grid layouts, animations, and the entire Neo-Brutalist theme  
+- **JavaScript (Vanilla)** — Interactive behavior, Terminal tabs logic, typing animations, and mobile navigation.  
 - **Font Awesome** — Icons  
-- **Google Fonts (Poppins, Fredoka, Cherry Bomb One)**  
+- **Google Fonts (Orbitron, Space Mono)** — Terminal and Cyberpunk typography
 
 No framework, no library — built with **pure fundamentals**.
 
@@ -61,35 +60,8 @@ No framework, no library — built with **pure fundamentals**.
 │   │   └── 🖼️ BajuDesain.png
 │   ├── 📁 images
 │   │   ├── 📁 certification
-│   │   │   ├── 🖼️ Sertifikat_pkl_1.png
-│   │   │   ├── 🖼️ Sertifikat_pkl_2.png
-│   │   │   └── 🖼️ Sertifikat_pkl_3.png
 │   │   ├── 📁 gallery
-│   │   │   ├── 🖼️ galeri_1.png
-│   │   │   ├── 🖼️ galeri_2.png
-│   │   │   ├── 🖼️ galeri_3.png
-│   │   │   ├── 🖼️ galeri_4.png
-│   │   │   ├── 🖼️ galeri_5.png
-│   │   │   ├── 🖼️ galeri_6.png
-│   │   │   └── 🖼️ galeri_7.png
-│   │   ├── 📁 web photo
-│   │   │   ├── 🖼️ Eco_1.png
-│   │   │   ├── 🖼️ Eco_2.png
-│   │   │   ├── 🖼️ Eco_3.png
-│   │   │   ├── 🖼️ Eco_4.png
-│   │   │   ├── 🖼️ Motor_1.png
-│   │   │   ├── 🖼️ Motor_2.png
-│   │   │   ├── 🖼️ Motor_3.png
-│   │   │   ├── 🖼️ Motor_4.png
-│   │   │   ├── 🖼️ Photo_1.png
-│   │   │   ├── 🖼️ Photo_2.png
-│   │   │   ├── 🖼️ Photo_3.png
-│   │   │   ├── 🖼️ Photo_4.png
-│   │   │   ├── 🖼️ Siakad_1.png
-│   │   │   ├── 🖼️ Siakad_2.png
-│   │   │   ├── 🖼️ Siakad_3.png
-│   │   │   └── 🖼️ Siakad_4.png
-│   │   └── 🖼️ foto-riyan.png
+│   │   └── 📁 web photo
 │   ├── 📕 CV-Riyan-Samuel-Harahap.pdf
 │   └── 📄 favicon.ico
 ├── 📁 css
@@ -103,14 +75,12 @@ No framework, no library — built with **pure fundamentals**.
 ## 🚀 Features
 
 - **Responsive Layout** (desktop & mobile friendly)
-- **Time Card Splash Screen**
-- **Spatula Custom SVG Cursor**
-- **Smooth Scrolling Navigation** with Hover Effects
-- **Active Navbar Highlight** on scroll
-- **Infinite Auto-Scrolling Marquee Gallery**
-- **Sandy's Rocket Back-to-top Button** with blast-off NOS animation and scroll progress
+- **Terminal UI Interface**
+- **Dynamic Typing Animations**
+- **Smooth Scrolling Navigation**
+- **Infinite Auto-Scrolling Marquee Banner**
 - **Downloadable CV**
-- **Thematic UI** with cartoon borders, vibrant colors, and floating "Antigravity" effects
+- **Thematic UI** with harsh borders, solid shadows, and high-contrast brutalist design
 
 ---
 
@@ -164,5 +134,5 @@ This portfolio is actively maintained and will continue to evolve as I:
 Feedback is always welcome 🙌
 
 <div align="center">
-© 2026 — Riyan Samuel Harahap
+© 2026 — Okeanos404 | Riyan Samuel Harahap
 </div>
