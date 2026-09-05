@@ -160,9 +160,9 @@ function initAboutTabs() {
 
       // Update terminal title text
       if (target === 'identity') {
-        terminalTitle.textContent = "ABOUT_R.DEV_404 - ROOT";
+        terminalTitle.textContent = "ABOUT_OKEANOS_404 - ROOT";
       } else {
-        terminalTitle.textContent = `ABOUT_R.DEV_404 - ${target.toUpperCase()}.MD`;
+        terminalTitle.textContent = `ABOUT_OKEANOS_404 - ${target.toUpperCase()}.MD`;
       }
     });
   });
